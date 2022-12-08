@@ -1,0 +1,137 @@
+extends ../layout.pug
+
+block content
+  .content-wrapper(style='padding-top:0px;')
+    // Content Header (Page header)
+    section.content-header
+      .container-fluid
+        .row.mb-2
+          .col-sm-6
+            h1 Update course
+          .col-sm-6
+            ol.breadcrumb.float-sm-right
+              li.breadcrumb-item
+                a(href='http://localhost:3000/main') Home
+              li.breadcrumb-item.active Update course
+      // /.container-fluid
+    // Main content
+    section.content
+      .container-fluid
+        .row
+          .col-12             
+            .card
+              // /.card-header
+              .card-body
+                .row
+                    .card-body
+                        table#TAB-students.table.table-bordered.table-striped
+                            thead
+                                tr.text-center
+                                    th Mã Khóa học
+                                    th(style='width: 275px;') Tên
+                                    th Học phí
+                                    th Thời lượng
+                                    th Trạng thái
+                                    th Giới hạn sĩ số
+                                    th Yêu cầu trình độ
+                                    th Khóa học
+                            tbody 
+                                each khoahoc in data
+                                    tr.text-center
+                                        td= khoahoc.MaKH
+                                        td(class="ten")= khoahoc.Ten
+                                        td= (khoahoc.Hocphi)
+                                        td= khoahoc.Thoiluong
+                                        td= khoahoc.Trangthai
+                                        td= khoahoc.Gioihansiso
+                                        td= khoahoc.Yeucautrinhdo
+                                        td.text-center
+                                            btn.btn-edit.btn.btn-primary.btn-xs(style="margin-right: 5px" ,data-MaKH=khoahoc.MaKH ,data-Ten=khoahoc.Ten ,data-Hocphi=khoahoc.Hocphi, data-Thoiluong=khoahoc.Thoiluong data-Trangthai=khoahoc.Trangthai data-Gioihansiso=khoahoc.Gioihansiso data-Yeucautrinhdo=khoahoc.Yeucautrinhdo data-Noidung=khoahoc.Noidung )
+                                                svg.bi.bi-pencil-square(xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' viewbox='0 0 16 16')
+                                                    path(d='M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z')
+                                                    path(fill-rule='evenodd' d='M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z')
+                                            btn.btn-search.btn.btn-primary.btn-xs(style="margin-right: 5px" ,data-MaKH=khoahoc.MaKH ,data-Ten=khoahoc.Ten ,data-Hocphi=khoahoc.Hocphi, data-Thoiluong=khoahoc.Thoiluong data-Trangthai=khoahoc.Trangthai data-Gioihansiso=khoahoc.Gioihansiso data-Yeucautrinhdo=khoahoc.Yeucautrinhdo data-Noidung=khoahoc.Noidung )
+                                                i.icon-search.menu-icon
+                                            #Addsudung.modal.fade(role='dialog' aria-labelledby='Addsudung' aria-hidden='true')
+                                                .modal-dialog.modal-lg
+                                                    .modal-content
+                                                        .modal-header
+                                                            h5.modal-title Danh sách giáo viên và trợ giảng
+                                                            button.close(type='button' data-dismiss='modal' aria-label='Close')
+                                                                span(aria-hidden='true') &times;
+                                                        form
+                                                            .modal-body
+                                                                .row 
+                                                                    .col-md-12
+                                                                        .form-group
+                                                                            label Mã khóa học
+                                                                            input.form-control(type='text'  name = 'MaKH', readonly)
+                                                                .row
+                                                                    .col-md-12
+                                                                        table.gv_th_Modal.table.table-bordered.table-striped
+                                                                            thead
+                                                                                tr.text-center
+                                                                                th Mã lớp học
+                                                                                th Mã nhân viên
+                                                                                th Tên nhân viên
+                                                                                th Giáo viên
+                                                                                th Trợ giảng
+ 
+
+                                            #EditKhoahocModal.modal.fade(role='dialog' aria-labelledby='EditKhoahocModal' aria-hidden='true')
+                                                .modal-dialog.modal-xl(role='document')
+                                                    .modal-content
+                                                        .modal-header
+                                                            h5.modal-title Chỉnh sửa
+                                                            button.close(type='button' data-dismiss='modal' aria-label='Close')
+                                                                span(aria-hidden='true') &times;
+                                                        form(action="/capnhatkh/update",method="post") 
+                                                            .modal-body
+                                                                .row     
+                                                                    .col-md-6 
+                                                                        .form-group
+                                                                            label Mã khóa học
+                                                                            input.form-control(type='text', name = 'MaKH', readonly)
+                                                                    .col-md-6
+                                                                        .form-group
+                                                                            label Tên
+                                                                            input.form-control(type='text'  name = 'Ten')
+                                                                .row
+                                                                    .col-md-6
+                                                                        .form-group
+                                                                            label Học phí
+                                                                            input.form-control(type='number'  name = 'Hocphi')
+                                                                    .col-md-6
+                                                                        .form-group
+                                                                            label Thời lượng
+                                                                            input.form-control(type='number'  name = 'Thoiluong')
+                                                                .row
+
+                                                                    .col-md-5
+                                                                        .form-group
+                                                                            label Giới hạn sĩ số
+                                                                            input.form-control(type='number'  name = 'Gioihansiso')
+                                                                    .col-md-5
+                                                                        .form-group
+                                                                            label Yêu cầu trình độ
+                                                                            input.form-control(type='number'  name = 'Yeucautrinhdo')
+                                                                    .col-md-2 
+                                                                        .form-group 
+                                                                            label Trạng thái
+                                                                                select#sel-trangthai.form-control(name="Trangthai", style="width: 100%;")
+                                                                                    option( )  opening
+                                                                                    option( )  closed
+                                                                .row    
+                                                                    .col-md-12 
+                                                                        .form-group 
+                                                                            label Nội dung
+                                                                            textarea#exampleFormControlTextarea1.form-control(rows='5' name="Noidung")
+                                                            .modal-footer
+                                                                button.btn.btn-secondary(type='button' data-dismiss='modal') Đóng lại
+                                                                button.btn.btn-primary(type='submit') Cập nhật
+                                                            //-     btn.btn-delete.btn.btn-danger.btn-xs(style="margin-right: 5px", data-id = student.id)
+
+block style 
+    link(rel="stylesheet", href="/create/khoahoc/index.css")
+block script 
+    script(src="/create/khoahoc/index.js")

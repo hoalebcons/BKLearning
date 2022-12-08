@@ -1,0 +1,79 @@
+extends ../layout.pug
+
+block content
+  .content-wrapper(style='padding-top:0px;')
+    // Content Header (Page header)
+    section.content-header
+      .container-fluid
+        .row.mb-2
+          .col-sm-6
+            h1 Update syllabus
+          .col-sm-6
+            ol.breadcrumb.float-sm-right
+              li.breadcrumb-item
+                a(href='http://localhost:3000/main') Home
+              li.breadcrumb-item.active Update syllabus
+      // /.container-fluid
+    // Main content
+    section.content
+      .container-fluid
+        .row
+          .col-12             
+            .card
+              // /.card-header
+              .card-body
+                .row
+                    .card-body
+                        .row 
+                            .col-11
+                                input.form-control(id='makh' placeholder='Mã khóa học')
+                            .col-1
+                                button.btn-search.form-control(name='' )
+                                    i.icon-search.menu-icon
+                        .row(style="margin-top:30px;")
+                            .col-3
+                                button.btn-add.form-control(name='' ) Thêm mới giáo trình cho khóa học
+                                #Addsudung.modal.fade(role='dialog' aria-labelledby='Addsudung' aria-hidden='true')
+                                    .modal-dialog.modal-dialog-centered 
+                                        .modal-content
+                                            .modal-header
+                                                h5.modal-title Thêm mới sử dụng
+                                                button.close(type='button' data-dismiss='modal' aria-label='Close')
+                                                    span(aria-hidden='true') &times;
+                                            form(action="/capnhatgt/add",method="post") 
+                                                .modal-body
+                                                    .row     
+                                                        .col-md-6 
+                                                            .form-group
+                                                                label Khóa học
+                                                                    select.form-control.form-control-lg(name="MaKH")
+                                                                        each kh in khoahoc
+                                                                            option(selected=''  value=kh.MaKH)=kh.Ten
+                                                        .col-md-6
+                                                            .form-group
+                                                                label Giáo trình
+                                                                    select.form-control.form-control-lg(name="MaGT")
+                                                                        each gt in giaotrinh
+                                                                            option(selected=''  value=gt.MaGT)=gt.Ten
+                                                .modal-footer
+                                                    button.btn.btn-secondary(type='button' data-dismiss='modal') Đóng lại
+                                                    button.btn.btn-primary(type='submit') Thêm mới
+                                                //-     btn.btn-delete.btn.btn-danger.btn-xs(style="margin-right: 5px", data-id = student.id)
+                        .row(style="margin-top:30px;")
+                            .col-12 
+                                table.giaotrinhofkh.table.table-bordered.table-striped
+                                    thead
+                                        tr.text-center
+                                            th Mã giáo trình
+                                            th Tên giáo trình
+                                            th Năm xuất bản
+                                            th Xóa sử dụng
+
+                                     
+
+block style 
+    link(rel="stylesheet", href="/create/khoahoc/gt/index.css")
+block script 
+    script(src="https://cdn.jsdelivr.net/npm/sweetalert2@9")
+    script(src="/create/khoahoc/gt/index.js")
+

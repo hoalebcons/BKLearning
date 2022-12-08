@@ -1,0 +1,114 @@
+extends ../layout.pug
+
+block content
+  .content-wrapper(style='padding-top:0px;')
+    // Content Header (Page header)
+    section.content-header
+      .container-fluid
+      // /.container-fluid
+    // Main content
+    section.content
+      .container-fluid
+        .row
+          .col-12    
+            h4 Đăng ký lớp học       
+            .card
+              // /.card-header
+              .card-body
+                .row 
+                    .card-body
+                        .row 
+                            .col-md-12 
+                                form
+                                    .row 
+                                        .col-md-11
+                                            input#makh.form-control(type='text' name='msmh' placeholder='Mã khóa học')
+                                        .col-md-1
+                                            button#search-btn.btn-search.btn.btn-primary.btn-flat(type='button')
+                                                i.icon-search.menu-icon
+                                    .row 
+                                        .col-12 
+                                            table.giaotrinhofkh.table.table-bordered.table-striped(style="margin-top:6px;")
+                                                thead
+                                                    tr.text-center
+                                                        th Mã lớp học
+                                                        th Ngày bắt đầu
+                                                        th Ngày kết thúc
+                                                        th Lịch học
+                                                        th Sĩ số
+                                                        th Chi nhánh
+                                                        th Đăng ký
+                                    .row
+                                        .col-12 
+                                             .card-body(style="padding-top:6px; padding-left:11px;")
+                                                .row(style='background-color: #4B49AC;')  
+                                                    i.icon-check.menu-icon(style="margin: 4px 4px 4px 7px; color:white;")
+                                                    h5(style="color: white; margin: 5px;") Danh sách đã đăng ký
+                                                .row
+                                                    table#TAB-students.table.table-bordered.table-striped.table-sm(style=" font-size: 10px;")
+                                                        thead
+                                                            tr.text-center
+                                                                th Mã khóa học
+                                                                th Tên
+                                                                th Mã lớp học
+                                                                th Ngày bắt đầu
+                                                                th Ngày kết thúc
+                                                                th Sĩ số
+                                                                th Hủy đăng ký
+                                                        tbody 
+                                                            each lophoc in list
+                                                                tr.text-center
+                                                                    td= lophoc.khoahocmakh
+                                                                    td(class='ten')= lophoc.ten
+                                                                    td()
+                                                                        a(href='#' class='chuyenlophoc' data-makhoahoc=lophoc.khoahocmakh data-malophochientai=lophoc.malh)=(lophoc.malh)
+                                                                        #Addsudung.modal.fade(role='dialog' aria-labelledby='Addsudung' aria-hidden='true')
+                                                                            .modal-dialog.modal-lg
+                                                                                .modal-content
+                                                                                    .modal-header
+                                                                                        h5.modal-title Chuyển lớp học
+                                                                                        button.close(type='button' data-dismiss='modal' aria-label='Close')
+                                                                                            span(aria-hidden='true') &times;
+                                                                                    form
+                                                                                        .modal-body
+                                                                                            .row 
+                                                                                                .col-md-12
+                                                                                                    .form-group
+                                                                                                        label Mã khóa học
+                                                                                                        input.form-control(type='text'  name = 'MaKH222', readonly)
+                                                                                            .row
+                                                                                                .col-md-12
+                                                                                                    table.gv_th_Modal.table.table-bordered.table-striped
+                                                                                                        thead
+                                                                                                            tr.text-center
+                                                                                                            th Mã lớp học
+                                                                                                            th Ngày bắt đầu
+                                                                                                            th Ngày kết thúc
+                                                                                                            th Lịch học
+                                                                                                            th Sĩ số
+                                                                                                            th Chi nhánh
+                                                                                                            th Chuyển
+                                                                    td= moment(lophoc.ngaybatdau).format('ll')
+                                                                    td= moment(lophoc.ngayketthuc).format('ll')
+                                                                    td= lophoc.siso
+                                                                    td.text-center
+                                                                        button.delete.btn.btn-primary(type='button' data-mamhhuy=lophoc.malh data-hocvien=lophoc.mahv )
+                                                                            i.icon-trash.menu-icon
+                                                                 
+                                                                    
+
+
+
+
+
+
+
+
+
+
+
+block style 
+    link(rel="stylesheet", href="/create/hocvien/dangkylh.css")
+block script 
+    script(src="https://cdn.jsdelivr.net/npm/sweetalert2@9")
+    script(src="/create/hocvien/dangkylh.js")

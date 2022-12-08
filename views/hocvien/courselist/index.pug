@@ -1,0 +1,105 @@
+extends ../layout.pug
+
+block content
+  .content-wrapper(style='padding-top:0px;')
+    // Content Header (Page header)
+    section.content-header
+      .container-fluid
+        .row.mb-2
+          .col-sm-6
+            h1 Course list
+          .col-sm-6
+            ol.breadcrumb.float-sm-right
+              li.breadcrumb-item
+                a(href='http://localhost:3000/home') Home
+              li.breadcrumb-item.active Course list
+      // /.container-fluid
+    // Main content
+    section.content
+      .container-fluid
+        .row
+          .col-12             
+            .card
+              // /.card-header
+              .card-body
+                .row
+                    .card-body
+                        table#TAB-students.table.table-bordered.table-striped
+                            thead
+                                tr.text-center
+                                    th Mã Khóa học
+                                    th(style='width: 275px;') Tên
+                                    th Học phí
+                                    th Thời lượng
+                                    th Trạng thái
+                                    th Giới hạn sĩ số
+                                    th Yêu cầu trình độ
+                                    th Khóa học
+                            tbody 
+                                each khoahoc in data
+                                    tr.text-center
+                                        td= khoahoc.MaKH
+                                        td(class="ten")= khoahoc.Ten
+                                        td= (khoahoc.Hocphi)
+                                        td= khoahoc.Thoiluong
+                                        td= khoahoc.Trangthai
+                                        td= khoahoc.Gioihansiso
+                                        td= khoahoc.Yeucautrinhdo
+                                        td.text-center
+                                            btn.btn-search.btn.btn-primary.btn-xs(style="margin-right: 5px" ,data-MaKH=khoahoc.MaKH ,data-Ten=khoahoc.Ten ,data-Hocphi=khoahoc.Hocphi, data-Thoiluong=khoahoc.Thoiluong data-Trangthai=khoahoc.Trangthai data-Gioihansiso=khoahoc.Gioihansiso data-Yeucautrinhdo=khoahoc.Yeucautrinhdo data-Noidung=khoahoc.Noidung )
+                                              i.icon-search.menu-icon
+                                            btn.btn-search2.btn.btn-primary.btn-xs(style="margin-right: 5px" ,data-MaKH=khoahoc.MaKH  )
+                                              i.icon-book.menu-icon
+                                            #Addsudung.modal.fade(role='dialog' aria-labelledby='Addsudung' aria-hidden='true')
+                                                .modal-dialog.modal-lg
+                                                    .modal-content
+                                                        .modal-header
+                                                            h5.modal-title Danh sách giáo viên và trợ giảng
+                                                            button.close(type='button' data-dismiss='modal' aria-label='Close')
+                                                                span(aria-hidden='true') &times;
+                                                        form
+                                                            .modal-body
+                                                                .row 
+                                                                    .col-md-12
+                                                                        .form-group
+                                                                            label Mã khóa học
+                                                                            input.form-control(type='text'  name = 'MaKH', readonly)
+                                                                .row
+                                                                    .col-md-12
+                                                                        table.gv_th_Modal.table.table-bordered.table-striped
+                                                                            thead
+                                                                                tr.text-center
+                                                                                th Mã nhân viên
+                                                                                th Tên nhân viên
+                                                                                th Giáo viên
+                                                                                th Trợ giảng
+                                            #giaotrinh.modal.fade(role='dialog' aria-labelledby='giaotrinh' aria-hidden='true')
+                                                .modal-dialog.modal-lg
+                                                    .modal-content
+                                                        .modal-header
+                                                            h5.modal-title Danh sách giáo trình sử dụng
+                                                            button.close(type='button' data-dismiss='modal' aria-label='Close')
+                                                                span(aria-hidden='true') &times;
+                                                        form
+                                                            .modal-body
+                                                                .row 
+                                                                    .col-md-12
+                                                                        .form-group
+                                                                            label Mã khóa học
+                                                                            input.form-control(type='text'  name = 'MaKH', readonly)
+                                                                .row(style="margin-top:30px;")
+                                                                    .col-12 
+                                                                        table.giaotrinhofkh.table.table-bordered.table-striped
+                                                                            thead
+                                                                                tr.text-center
+                                                                                    th Mã giáo trình
+                                                                                    th Tên giáo trình
+                                                                                    th Năm xuất bản    
+ 
+
+                                                            //-     btn.btn-delete.btn.btn-danger.btn-xs(style="margin-right: 5px", data-id = student.id)
+
+//- block style 
+//-     link(rel="stylesheet", href="/create/khoahoc/index.css")
+block script 
+    script(src="/create/hocvien/courselist.js")

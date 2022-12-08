@@ -1,0 +1,474 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    title Chi tiết khóa học
+    meta(content='Chernyh Mihail' name='author')
+    meta(content='Spedito - All in one place' name='description')
+    meta(name='viewport' content='width=device-width, initial-scale=1.0')
+    meta(name='HandheldFriendly' content='true')
+    meta(name='format-detection' content='telephone=no')
+    meta(content='IE=edge' http-equiv='X-UA-Compatible')
+    link(rel='shortcut icon' href='assets/img/logoW.png' type='image/x-icon')
+    link(rel='stylesheet' href='assets/css/uikit.min.css')
+    link(rel='stylesheet' href='assets/css/main.css')
+    // <link rel="stylesheet" href="assets/css/dropdown.css">
+    link#dm-light(rel='stylesheet' href='assets/css/light.css')
+  body.page-product.dm-light
+    // Loader
+    #page-preloader
+      span.spinner.border-t_second_b.border-t_prim_a
+    // Loader end
+    .page-wrapper
+      header.page-header
+        .page-header__top
+          .uk-container
+            nav.uk-navbar-container.uk-navbar-transparent(data-uk-navbar='')
+              .uk-navbar-left
+                button.uk-button(type='button' data-target='#offcanvas' data-uk-toggle='' data-uk-icon='menu')
+                ul.uk-navbar-nav
+                  li
+                    a(href='home') TRANG CHỦ
+                  li
+                    a(href='catalog') KHÓA HỌC
+                  li
+                    a(href='branch') CHI NHÁNH
+              .uk-navbar-center
+                .logo
+                  .logo__box
+                    a(href='home')
+                      img.logo__img.logo__img--full(src='assets/img/logo.png' alt='logo')
+              .uk-navbar-right
+                ul.uk-navbar-nav
+                  li
+                    a(href='home') VỀ CHÚNG TÔI
+                  li
+                    a(href='blog') TIN TỨC
+                  li
+                    a(href='contact') LIÊN HỆ
+        .page-header__bottom
+          .uk-container
+            .uk-navbar-container.uk-navbar-transparent(data-uk-navbar='')
+              .uk-navbar-left
+                div
+                  .block-with-phone
+                    img(src='assets/img/icons/delivery.svg' alt='delivery' data-uk-svg='')
+                    div
+                      span Liên hệ ngay với chúng tôi
+                      a(href='tel:13205448749') 0394143031
+              .uk-navbar-center
+              .uk-navbar-right
+                .other-links
+                  ul.other-links-list
+                    li
+                      a(href='#modal-full' data-uk-toggle='')
+                        span(data-uk-icon='search')
+                    li
+                      a(href='login')
+                        span(data-uk-icon='user')
+                    li
+                      a(href='cart')
+                        span(data-uk-icon='cart')
+      main.page-main
+        .section-first-screen
+          .first-screen__bg(style='background-image: url(assets/img/pages/contacts/bg26.jpg)')
+          .first-screen__content
+            .uk-container
+              nav.category-nav
+                nav.uk-navbar-container.uk-navbar-transparent(data-uk-navbar='')
+                  ul.uk-navbar-nav
+                    li
+                      a(href='catalog')
+                        .nav-item
+                          span.nav-item__icon
+                            img(src='assets/img/icons/menu/thieunhi.png' alt='face care' data-uk-svg='')
+                          span.nav-item__text Khoa học
+                    li
+                      a(href='catalog')
+                        .nav-item
+                          span.nav-item__icon
+                            img(src='assets/img/icons/menu/thieunien.png' alt='hair care' data-uk-svg='')
+                          span.nav-item__text Ngôn ngữ
+                    li
+                      a(href='catalog')
+                        .nav-item
+                          span.nav-item__icon
+                            img(src='assets/img/icons/menu/onthi.png' alt='lips care' data-uk-svg='')
+                          span.nav-item__text Luyện thi
+                    li
+                      a(href='catalog')
+                        .nav-item
+                          span.nav-item__icon
+                            img(src='assets/img/icons/menu/kynang.png' alt='body care' data-uk-svg='')
+                          span.nav-item__text Kỹ năng
+              .first-screen__box
+                h2.first-screen__title Course Details
+                .first-screen__breadcrumb
+                  ul.uk-breadcrumb
+                    li
+                      a(href='/') Home
+                    li
+                      a(href='catalog') Course
+                    li
+                      span Course Details
+        .page-content
+          .uk-margin-large-top.uk-container
+            .product-full-card
+              .uk-grid.uk-grid-large.uk-child-width-1-2.uk-flex-middle(data-uk-grid='')
+                div
+                  .product-full-card__gallery
+                    div(data-uk-slideshow='ratio: 1:1; animation: slide')
+                      .product-full-card__gallery-box
+                        ul.uk-slideshow-items.uk-child-width-1-1
+                          li.uk-flex.uk-flex-center.uk-flex-middle
+                            img(src=data.url style='width:100%;height=100%;' alt=data.MaKH)
+                        .product-full-card__whish
+                          i.fas.fa-heart
+                        .product-full-card__type.spicy
+                        .product-full-card__tooltip(data-uk-tooltip='title: Khóa kỹ năng; pos: bottom-right')
+                          i.fas.fa-info-circle
+                div
+                  .product-full-card__content
+                    .product-full-card__not-active
+                      .product-full-card__title(style='font-size: 30px;')= data.Ten
+                      .product-full-card__desc(style='height: 80px; margin-top: 30px;')=data.Noidung
+                      .product-full-card__select(style='height: 180px;')
+                        .select-box
+                          ul
+                            li
+                              label(style='margin-left: 8px;')
+                                span=data.Gioihansiso+ " " + "người/lớp"
+                            li
+                              label
+                                span= "Trạng thái: "+data.Trangthai
+                        .select-box
+                          ul
+                            li
+                              label 
+                                span= "Thời lượng: " + data.Thoiluong + " tuần"
+                        .select-box
+                          ul
+                            li
+                              label
+                                span= "Yêu cầu (IELTS):" +( (data.Yeucautrinhdo!=0)? data.Yeucautrinhdo : " không")
+                  .product-full-card__info
+                    .product-full-card__price
+                      span Học Phí: 
+                      span.value=data.Hocphi
+                    .product-full-card__btns
+                      a.uk-button(href='#Class_list') ĐĂNG KÝ NGAY
+                      a.uk-button(style='margin-left: 10px; background-color: grey;' href='https://www.efset.org/vi/' target='_blank' rel='noopener noreferrer') KIỂM TRA TRÌNH ĐỘ
+                  .product-full-card__category
+                  .product-full-card__share
+                    span Share This:
+                    ul
+                      li
+                        a(href='#!')
+                          i.fab.fa-twitter
+                      li
+                        a(href='#!')
+                          i.fab.fa-facebook-f
+                      li
+                        a(href='#!')
+                          i.fab.fa-google-plus-g
+                      li
+                        a(href='#!')
+                          i.fab.fa-pinterest-p
+              .product-full-card__tabs
+                a#Class_list
+                ul.uk-subnav(data-uk-switcher='animation: uk-animation-slide-left-medium, uk-animation-slide-right-medium')
+                  li
+                    a(href='#') Danh sách lớp mở
+                  li
+                    a(href='#') Thông tin thêm
+                  li
+                    a(href='#') Đánh giá
+                ul.uk-switcher.uk-margin
+                  li
+                    .uk-grid.uk-grid-divider(data-uk-grid-match='')
+                      .uk-width-2-3
+                        .uk-overflow-auto
+                          table.uk-table.uk-table-striped.uk-table-hover
+                            thead(style='font-weight: 700;')
+                              tr
+                                td(align='center') Mã Lớp học
+                                td(align='center') Ngày bắt đầu
+                                td(align='center') Ngày kết thúc
+                                td(align='center') Sĩ số
+                                td(align='center') Chi nhánh
+                                td(align='center') Xem TKB
+                                td(align='center') Đăng ký
+                            tbody
+                              tr
+                                td(align='center') KN001_L01
+                                td(align='center') 2021-09-27 15:00:00
+                                td(align='center') 2021-12-19 15:00:00
+                                td(align='center') 7
+                                td(align='center') T2E Lê Văn Lương
+                                td(align='center')
+                                  input#toggleVisibilityButton.uk-button.uk-button-default(type='button' value='XemTKB')
+                                td(align='center')
+                                  a.uk-button.uk-button-default(href='login')
+                                    | Đăngký
+                                    img.uk-margin-small-left
+                              tr
+                                td(align='center') KN001_L02
+                                td(align='center') 2020-09-27 15:00:00
+                                td(align='center') 2020-12-19 15:00:00
+                                td(align='center') 5
+                                td(align='center') T2E CMT8
+                                td(align='center')
+                                  input#toggleVisibilityButton2.uk-button.uk-button-default(type='button' value='XemTKB')
+                                td(align='center')
+                                  a.uk-button.uk-button-default(href='login')
+                                    | Đăngký
+                                    img.uk-margin-small-left
+                      .uk-width-1-3
+                        .uk-overflow-auto
+                          table#displaytable.uk-table.uk-table-striped(style='display:none')
+                            thead(style='font-weight: 700;')
+                              tr
+                                td(align='center') Thứ
+                                td.uk-table-small(align='center') Giờ bắt đầu
+                                td.uk-table-small(align='center') Giờ kết thúc
+                            tbody
+                              tr
+                                td(align='center') 3
+                                td(align='center') 17h
+                                td(align='center') 19h
+                              tr
+                                td(align='center') 5
+                                td(align='center') 17h
+                                td(align='center') 19h
+                              tr
+                                td(align='center') 7
+                                td(align='center') 17h
+                                td(align='center') 19h
+                          table#displaytable2.uk-table.uk-table-striped(style='display:none;margin-top: 0;padding:0;')
+                            thead(style='font-weight: 700;')
+                              tr
+                                td(align='center') Thứ
+                                td.uk-table-small(align='center') Giờ bắt đầu
+                                td.uk-table-small(align='center') Giờ kết thúc
+                            tbody
+                              tr
+                                td(align='center') 2
+                                td(align='center') 17h
+                                td(align='center') 19h
+                              tr
+                                td(align='center') 4
+                                td(align='center') 17h
+                                td(align='center') 19h
+                              tr
+                                td(align='center') 6
+                                td(align='center') 17h
+                                td(align='center') 19h
+                  li
+                    .uk-overflow-auto
+                      .section-title
+                        .uk-h2 Danh sách giáo trình được sử dụng
+                      table.uk-table.uk-table-divider.uk-table-hover
+                        thead
+                          tr(style='font-weight: 700;')
+                            // <th class="uk-table-shrink">Mã Giáo trình</th>
+                            th.uk-width-1-2 Tên giáo trình
+                            th.uk-width-1-2 Năm xuất bản
+                        tbody
+                          tr
+                            // <td>KN001_GT01</td>
+                            td Tài liệu độc quyền
+                            td 2021
+                    .uk-grid.uk-grid-divider
+                      .uk-width-1-1
+                        .uk-overflow-auto
+                          .section-title
+                            .uk-h2 Danh sách giáo viên tham gia giảng dạy
+                          table.uk-table.uk-table-divider.uk-table-hover
+                            thead
+                              tr
+                                // <th class="uk-table-shrink">Mã Giáo trình</th>
+                                th.uk-width-1-2 Tên
+                                th.uk-width-1-4 Kinh nghiệm
+                                th.uk-width-1-4 Trình độ
+                            tbody
+                              tr
+                                td Nguyễn Huyền Trang
+                                td 7 năm
+                                td Thạc sĩ Ngôn ngữ học
+                      .uk-width-1-1
+                        .uk-overflow-auto
+                          .section-title
+                            .uk-h2 Danh sách trợ giảng tham gia hỗ trợ
+                          table.uk-table.uk-table-divider.uk-table-hover
+                            thead
+                              tr
+                                // <th class="uk-table-shrink">Mã Giáo trình</th>
+                                th.uk-width-1-2 Tên
+                                th.uk-width-1-4 Kinh nghiệm
+                                th.uk-width-1-4 Trình độ
+                            tbody
+                              tr
+                                td Bùi Công Anh Tùng
+                                td 12 lớp
+                                td IELST 7.0
+                  li
+                    .section-title
+                      .uk-h2 Đánh giá
+                    ul.uk-comment-list
+                      li
+                        article.uk-comment
+                          header.uk-comment-header
+                            .uk-grid-small.uk-grid-divider(data-uk-grid='')
+                              .uk-width-auto
+                                img.uk-comment-avatar(src='./assets/img/blog/img-reviews-1.png' alt='')
+                              .uk-width-expand
+                                .uk-flex.uk-flex-middle.uk-margin-small-bottom
+                                  h4.uk-comment-title.uk-margin-remove Lê Văn Đông
+                                  span.uk-text-meta.uk-margin-small-left August 20, 2021
+                                .uk-comment-body
+                                  p
+                                    | Khóa học giúp tôi tự tin hơn trong giao tiếp hằng ngày, giúp tôi tiếp xúc với người nước ngoài không còn bị ấp úng.
+                      li
+                        article.uk-comment
+                          header.uk-comment-header
+                            .uk-grid-small.uk-grid-divider(data-uk-grid='')
+                              .uk-width-auto
+                                img.uk-comment-avatar(src='./assets/img/blog/img-reviews-2.png' alt='')
+                              .uk-width-expand
+                                .uk-flex.uk-flex-middle.uk-margin-small-bottom
+                                  h4.uk-comment-title.uk-margin-remove Lê Trần Hoàng Thịnh
+                                  span.uk-text-meta.uk-margin-small-left August 20, 2020
+                                .uk-comment-body
+                                  p
+                                    | Sau khi học khóa học này, em thấy kỹ năng thuyết trình và nói trước đám đông khi dùng ngoại ngữ của mình được cải thiện nhiều. Các bạn hòa đồng và thầy cô cũng thân thiện.
+                    .block-form.uk-margin-medium-top
+                      .section-title
+                        .uk-h2 Để lại đánh giá
+                      .section-content
+                        p
+                          | Câu trả lời của bạn sẽ xuất hiện sau khi được xét duyệt, thông tin cá nhân sẽ được bảo mật. Những mục bắt buộc được đánh dấu *
+                        form(action='#!')
+                          .uk-grid.uk-grid-small.uk-child-width-1-2(data-uk-grid='')
+                            div
+                              input.uk-input.uk-form-large(type='text' placeholder='Your Name *')
+                            div
+                              input.uk-input.uk-form-large(type='text' placeholder='Email *')
+                            .uk-width-1-1
+                              textarea.uk-textarea.uk-form-large(placeholder='Reviews *')
+                            div
+                              button.uk-button.uk-button-large(type='submit') Gửi đánh giá
+      footer.page-footer(style='background-color: #FCF7F7;')
+        .page-footer__top
+          .uk-container
+            .page-footer__logo
+              .logo
+                a.logo__link(href='home')
+                  img.logo__img(src='assets/img/logo.png' alt='logo')
+            .page-footer__contacts
+              .contact-item-box
+                .contact-item-box__title Địa chỉ 
+                .contact-item-box__value
+                  | 38C - 39C, quốc lộ 1A,
+                  br
+                  |  Tân Thới Hiệp, Quận 12, Tp.HCM
+              .contact-item-box
+                .contact-item-box__title Mở cửa
+                .contact-item-box__value
+                  | Thứ 2 - Thứ 7: 10:00 AM – 11:30 PM
+                  br
+                  |  Chủ nhật: 9:00 AM – 4:00 PM
+              .contact-item-box
+                .contact-item-box__title Liên hệ
+                .contact-item-box__value
+                  | Email: 
+                  a(href='mailto:cloudythy@gmail.com') t2e@gmail.com
+                  br
+                  |  Điện thoại:
+                  a(href='tel:0394143031')  0394143031
+        .page-footer__middle
+          .uk-container
+            ul.uk-navbar-nav
+              li
+                a(href='/') Trang chủ
+              li
+                a(href='catalog') Khóa học
+              li
+                a(href='branch') Chi nhánh
+              li
+                a(href='branch') Về chúng tôi
+              li
+                a(href='blog') Tin tức
+              li
+                a(href='contact') Liên hệ
+        .page-footer__bottom
+          .uk-container
+            .page-footer__social
+              ul.social
+                li.social-item
+                  a.social-link(href='#!')
+                    i.fab.fa-twitter
+                li.social-item
+                  a.social-link(href='#!')
+                    i.fab.fa-facebook-f
+                li.social-item
+                  a.social-link(href='#!')
+                    i.fab.fa-linkedin-in
+                li.social-item
+                  a.social-link(href='#!')
+                    i.fab.fa-google-plus-g
+                li.social-item
+                  a.social-link(href='#!')
+                    i.fab.fa-youtube
+            .page-footer__copy
+              span ©2018 t2e
+              a(href='#!') Terms and Conditions
+        #offcanvas(data-uk-offcanvas='overlay: true')
+          .uk-offcanvas-bar
+            button.uk-offcanvas-close(type='button' data-uk-close='')
+            .uk-margin-top
+              ul.uk-nav
+                li
+                  a(href='/') Trang chủ
+                li
+                  a(href='catalog') Khóa học
+                li
+                  a(href='branch') Chi nhánh
+                li
+                  a(href='home') Về chúng tôi
+                li
+                  a(href='blog') Tin tức
+                li
+                  a(href='contact') Liên hệ
+            hr.uk-margin
+            ul.uk-nav.uk-nav-parent-icon(data-uk-nav='')
+              li.uk-parent
+                a(href='catalog') Khóa thiếu nhi
+              li.uk-parent
+                a(href='catalog') Khóa thiếu niên
+              li.uk-parent
+                a(href='catalog') Khóa ôn thi
+              li.uk-parent
+                a(href='catalog') Khóa kỹ năng
+            hr.uk-margin
+            .uk-margin-bottom
+              .block-with-phone
+                img(src='assets/img/icons/delivery.svg' alt='delivery' data-uk-svg='')
+                div
+                  span Liên hệ ngay với chúng tôi
+                  a(href='tel:13205448749') 0394143031
+        #callback.uk-flex-top(data-uk-modal='')
+          .uk-modal-dialog.uk-modal-body.uk-margin-auto-vertical
+            button.uk-modal-close-default(type='button' data-uk-close='')
+            p
+        #modal-full.uk-modal-full.uk-modal(data-uk-modal='')
+          .uk-modal-dialog.uk-flex.uk-flex-center.uk-flex-middle(data-uk-height-viewport='')
+            button.uk-modal-close-full(type='button' data-uk-close='')
+            form.uk-search.uk-search-large
+              input.uk-search-input.uk-text-center(type='search' placeholder='Search...' autofocus='')
+    script(src='assets/js/jquery.min.js')
+    script(src='assets/js/uikit.min.js')
+    script(src='assets/js/uikit-icons.min.js')
+    script(src='assets/js/main.js')
+    script(src='assets/js/fontawesome.all.min.js')
+    script(src='assets/js/cart-process.js')
+    script(src='assets/js/khoahoc-btn.js')

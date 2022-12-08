@@ -1,0 +1,108 @@
+doctype html
+head
+  // Required meta tags
+  meta(charset='utf-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no')
+  title Skydash Admin
+  // plugins:css
+  link(rel='stylesheet' href='../../vendors/feather/feather.css')
+  link(rel='stylesheet' href='../../vendors/ti-icons/css/themify-icons.css')
+  link(rel='stylesheet' href='../../vendors/css/vendor.bundle.base.css')
+  // endinject
+  // Plugin css for this page
+  // End plugin css for this page
+  // inject:css
+  link(rel='stylesheet' href='../../css/vertical-layout-light/style.css')
+  // endinject
+  link(rel='shortcut icon' href='../../images/favicon.png')
+.container-scroller
+  .container-fluid.page-body-wrapper.full-page-wrapper
+    .content-wrapper.d-flex.align-items-center.auth.px-0
+      .row.w-100.mx-0
+        .col-lg-4.mx-auto
+          .auth-form-light.text-left.py-5.px-4.px-sm-5
+            .brand-logo
+              img(src='assets/img/logo.png' alt='logo')
+            h4 Register account 
+            h6.font-weight-light Signing up is easy. It only takes a few steps
+            form#form-register-student.pt-3(action="/register/add", method = "post")
+              .row
+                .col-7
+                    .form-group
+                        input#email.form-control.form-control-lg(type='text' name='email' placeholder='Username or Email')
+                .col-5
+                    .form-group
+                        input#pass.form-control.form-control-lg(type='password' name='pass' placeholder='Password')
+              .row
+                .col-4
+                    .form-group
+                        label(for='exampleInputName1') Surname
+                        input#fname.form-control(type='text' name='fname' placeholder='Surname')
+                .col-4
+                    .form-group
+                        label(for='exampleInputName1') Buffer name
+                        input#bname.form-control(type='text' name='bname' placeholder='Buffer name')
+                .col-4
+                    .form-group
+                        label(for='exampleInputName1') Last Name
+                        input#lname.form-control(type='text' name='lname' placeholder='Last Name')
+              .row
+                .col-4
+                    .form-group
+                        label(for='exampleSelectGender') Gender
+                        select#exampleSelectGender.form-control(name='gender')
+                            option male
+                            option female
+                .col-4
+                    .form-group
+                        label(for='exampleInputEmail3') Year of Birth
+                        input#bday.form-control(type='number' name='bday'  min="1900" max = "2021" size='4' maxlength='4' placeholder='Year of Birth')
+                .col-4
+                    .form-group
+                        label(for='exampleInputEmail3') Phone Number
+                        input#pnumber.form-control(type='text' name='pnumber' size='10' maxlength='10' minlength='10' placeholder='Phone Number')
+              .row      
+                .col-6                               
+                    .form-group
+                        label(for='exampleInputCity1') Apartment number
+                        input#sonha.form-control(type='text' name='sonha' placeholder='Apartment number')
+                .col-6  
+                    .form-group
+                        label(for='exampleInputCity1') Street
+                        input#duong.form-control(type='text' name='duong' placeholder='Street')
+              .row  
+                .col-6  
+                    .form-group
+                        label(for='exampleInputCity1') District
+                        input#quan.form-control(type='text' name='quan' placeholder='District')
+                .col-6  
+                    .form-group
+                        label(for='exampleInputCity1') City
+                        input#city.form-control(type='text' name='city' placeholder='City' )
+              .mb-4
+                .form-check
+                  label.form-check-label.text-muted
+                    input.form-check-input(type='checkbox')
+                    |                       I agree to all Terms &amp; Conditions
+              .mt-3
+                button.btn.btn-block.btn-primary.btn-lg.font-weight-medium.auth-form-btn(type='submit') SIGN UP
+              .text-center.mt-4.font-weight-light
+                | Already have an account? 
+                a.text-primary(href='login') Login
+    // content-wrapper ends
+  // page-body-wrapper ends
+// container-scroller
+// plugins:js
+script(src='../../vendors/js/vendor.bundle.base.js')
+// endinject
+// Plugin js for this page
+// End plugin js for this page
+// inject:js
+script(src='../../js/off-canvas.js')
+script(src='../../js/hoverable-collapse.js')
+script(src='../../js/template.js')
+script(src='../../js/settings.js')
+script(src='../../js/todolist.js')
+script(src="https://cdn.jsdelivr.net/npm/sweetalert2@9")
+script(src="/create/hocvien/register.js")
+// endinject

@@ -1,0 +1,421 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    title Tin tức
+    meta(content='Chernyh Mihail' name='author')
+    meta(content='Spedito - All in one place' name='description')
+    meta(name='viewport' content='width=device-width, initial-scale=1.0')
+    meta(name='HandheldFriendly' content='true')
+    meta(name='format-detection' content='telephone=no')
+    meta(content='IE=edge' http-equiv='X-UA-Compatible')
+    link(rel='shortcut icon' href='assets/img/logoW.png' type='image/x-icon')
+    link(rel='stylesheet' href='assets/css/uikit.min.css')
+    link(rel='stylesheet' href='assets/css/main.css')
+    // <link rel="stylesheet" href="assets/css/dropdown.css">
+    link#dm-light(rel='stylesheet' href='assets/css/light.css')
+  body.page-blog.dm-light
+    // Loader
+    #page-preloader
+      span.spinner.border-t_second_b.border-t_prim_a
+    // Loader end
+    .page-wrapper
+      header.page-header
+        .page-header__top
+          .uk-container
+            nav.uk-navbar-container.uk-navbar-transparent(data-uk-navbar='')
+              .uk-navbar-left
+                button.uk-button(type='button' data-target='#offcanvas' data-uk-toggle='' data-uk-icon='menu')
+                ul.uk-navbar-nav
+                  li
+                    a(href='home') TRANG CHỦ
+                  li
+                    a(href='catalog') KHÓA HỌC
+                  li
+                    a(href='branch') CHI NHÁNH
+              .uk-navbar-center
+                .logo
+                  .logo__box
+                    a(href='home')
+                      img.logo__img.logo__img--full(src='assets/img/logo.png' alt='logo')
+              .uk-navbar-right
+                ul.uk-navbar-nav
+                  li
+                    a(href='home') VỀ CHÚNG TÔI
+                  li
+                    a(href='blog') TIN TỨC
+                  li
+                    a(href='contact') LIÊN HỆ
+        .page-header__bottom
+          .uk-container
+            .uk-navbar-container.uk-navbar-transparent(data-uk-navbar='')
+              .uk-navbar-left
+                div
+                  .block-with-phone
+                    img(src='assets/img/icons/delivery.svg' alt='delivery' data-uk-svg='')
+                    div
+                      span Liên hệ ngay với chúng tôi
+                      a(href='tel:13205448749') 0394143031
+              .uk-navbar-center
+              .uk-navbar-right
+                .other-links
+                  ul.other-links-list
+                    li
+                      a(href='#modal-full' data-uk-toggle='')
+                        span(data-uk-icon='search')
+                    li
+                      a(href='login')
+                        span(data-uk-icon='user')
+                    li
+                      a(href='cart')
+                        span(data-uk-icon='cart')
+      main.page-main
+        .section-first-screen
+          .first-screen__bg(style='background-image: url(assets/img/pages/contacts/bg13.jpg)')
+          .first-screen__content
+            .uk-container
+              nav.category-nav
+                nav.uk-navbar-container.uk-navbar-transparent(data-uk-navbar='')
+                  ul.uk-navbar-nav
+                    li
+                      a(href='catalog')
+                        .nav-item
+                          span.nav-item__icon
+                            img(src='assets/img/icons/menu/thieunhi.png' alt='face care' data-uk-svg='')
+                          span.nav-item__text Khoa học
+                    li
+                      a(href='catalog')
+                        .nav-item
+                          span.nav-item__icon
+                            img(src='assets/img/icons/menu/thieunien.png' alt='hair care' data-uk-svg='')
+                          span.nav-item__text Ngôn ngữ
+                    li
+                      a(href='catalog')
+                        .nav-item
+                          span.nav-item__icon
+                            img(src='assets/img/icons/menu/onthi.png' alt='lips care' data-uk-svg='')
+                          span.nav-item__text Luyện thi
+                    li
+                      a(href='catalog')
+                        .nav-item
+                          span.nav-item__icon
+                            img(src='assets/img/icons/menu/kynang.png' alt='body care' data-uk-svg='')
+                          span.nav-item__text Kỹ năng
+              .first-screen__box
+                h2.first-screen__title Latest News
+                .first-screen__breadcrumb
+                  ul.uk-breadcrumb
+                    li
+                      a(href='/') Home
+                    li
+                      span News Blog
+        .page-content
+          .uk-margin-large-top.uk-container
+            .uk-grid(data-uk-grid='')
+              .uk-width-2-3
+                article.article-intro
+                  .article-intro__image
+                    .uk-position-relative.uk-visible-toggle.uk-light(tabindex='-1' data-uk-slideshow='')
+                      ul.uk-slideshow-items
+                        li
+                          img(src='assets/img/blog/eng-blog-prev-1.jpg' alt='' data-uk-cover='')
+                        li
+                          img(src='assets/img/blog/eng-blog-prev-2.jpg' alt='' data-uk-cover='')
+                        li
+                          img(src='assets/img/blog/eng-blog-prev-3.jpg' alt='' data-uk-cover='')
+                        li
+                          img(src='assets/img/blog/eng-blog-prev-4.jpg' alt='' data-uk-cover='')
+                        li
+                          img(src='assets/img/blog/eng-blog-prev-5.jpg' alt='' data-uk-cover='')
+                      a.uk-position-center-left(href='#' data-uk-slidenav-previous='' data-uk-slideshow-item='previous')
+                      a.uk-position-center-right(href='#' data-uk-slidenav-next='' data-uk-slideshow-item='next')
+                  .article-intro__body
+                    .article-intro__info
+                      .article-intro__author
+                        i.fas.fa-user
+                        span By Isabelle
+                      .article-intro__category
+                        i.fas.fa-folder-open
+                        span Posted in Event
+                      .article-intro__date
+                        i.fas.fa-calendar-alt
+                        span Jan 22, 2020
+                      .article-intro__comments
+                        i.fas.fa-comment
+                        span 10
+                    h2.article-intro__title Năm mới – Học ngôn ngữ mới, 8 cách để thực hiện điều đó
+                    .article-intro__content
+                      p
+                        | Cầu chúc những điều may mắn và tốt đẹp nhất sẽ đến với bạn trong năm mới Tân Sửu 2021.
+                    .article-intro__bottom
+                      .article-intro__tags
+                        i.fas.fa-tags
+                        span HỌC TIẾNG, MẸO HỌC TIẾNG, NĂM MỚI
+                      .article-intro__more
+                        a.uk-button(href='blogprev') Read More
+                article.article-intro
+                  .article-intro__image
+                    a(href='blognext')
+                      img(src='assets/img/blog/eng-blog-1.jpg' alt='img-article')
+                  .article-intro__body
+                    .article-intro__info
+                      .article-intro__author
+                        i.fas.fa-user
+                        span By Tom
+                      .article-intro__category
+                        i.fas.fa-folder-open
+                        span Posted in News
+                      .article-intro__date
+                        i.fas.fa-calendar-alt
+                        span July 31, 2021
+                      .article-intro__comments
+                        i.fas.fa-comment
+                        span 3
+                    h2.article-intro__title 9 lý do tiếng Anh là ngôn ngữ phổ biến nhất
+                    .article-intro__bottom
+                      .article-intro__tags
+                        i.fas.fa-tags
+                        span HỌC TIẾNG, VĂN HÓA, SỰ THẬT THÚ VỊ
+                      .article-intro__more
+                        a.uk-button(href='blogarticle') Read More
+                article.article-intro
+                  .article-intro__image
+                    a(href='blognext')
+                      img(src='assets/img/blog/eng-blog-next-1.jpg' alt='img-article')
+                  .article-intro__body
+                    .article-intro__info
+                      .article-intro__author
+                        i.fas.fa-user
+                        span By Tom
+                      .article-intro__category
+                        i.fas.fa-folder-open
+                        span Posted in Event
+                      .article-intro__date
+                        i.fas.fa-calendar-alt
+                        span Nov 30, 2020
+                      .article-intro__comments
+                        i.fas.fa-comment
+                        span 20
+                    h2.article-intro__title 5 lý do tiếng Anh – Anh khác Anh – Mỹ du học sinh cần biết
+                    .article-intro__bottom
+                      .article-intro__tags
+                        i.fas.fa-tags
+                        span HỌC TIẾNG ANH, ANH, US
+                      .article-intro__more
+                        a.uk-button(href='blognext') Read More
+                ul.uk-pagination.uk-flex-center.uk-margin-medium-top
+                  li.uk-active
+                    span 1
+                  li
+                    a(href='#') 2
+                  li
+                    a(href='#') 3
+                  li.uk-disabled
+                    span ...
+                  li
+                    a(href='#')
+                      span(data-uk-pagination-next='')
+              .uk-width-1-3
+                aside.sidebar
+                  .widjet.widjet-search
+                    form.uk-search.uk-search-default(action='#!')
+                      button.uk-search-icon-flip(data-uk-search-icon='' type='submit')
+                      input.uk-input.uk-search-input.uk-form-large(type='search' placeholder='Search blog ...')
+                  .widjet.widjet-category
+                    .widjet__title Phân loại
+                    ul.list-category
+                      li
+                        a(href='blog')
+                          span.title Học tiếng Anh
+                          span.col (30)
+                      li
+                        a(href='blog')
+                          span.title IELTS và kỳ thi quốc tế
+                          span.col (5)
+                      li
+                        a(href='blog')
+                          span.title Sự kiện
+                          span.col (16)
+                      li
+                        a(href='blog')
+                          span.title Các phương pháp học tập
+                          span.col (47)
+                      li
+                        a(href='blog')
+                          span.title Ưu đãi đặc biệt
+                          span.col (23)
+                  .widjet.widjet-list-articles
+                    .widjet__title Được xem nhiều gần đây
+                    ul.list-articles
+                      li.list-articles-item
+                        a.list-articles-item__link(href='blogarticle')
+                          .list-articles-item__img
+                            img(src='assets/img/blog/eng-blog-1.jpg' alt='article-thumb')
+                          .list-articles-item__info
+                            .list-articles-item__title 9 lý do tiếng Anh là ngôn ngữ phổ biến nhất
+                            .list-articles-item__date Posted: July 31, 2021
+                      li.list-articles-item
+                        a.list-articles-item__link(href='blogprev')
+                          .list-articles-item__img
+                            img(src='assets/img/blog/eng-blog-prev-1.jpg' alt='article-thumb')
+                          .list-articles-item__info
+                            .list-articles-item__title Năm mới – Học ngôn ngữ mới, 8 cách để thực hiện điều đó
+                            .list-articles-item__date Posted: Jan 22, 2021
+                      li.list-articles-item
+                        a.list-articles-item__link(href='blognext')
+                          .list-articles-item__img
+                            img(src='assets/img/blog/eng-blog-next-1.jpg' alt='article-thumb')
+                          .list-articles-item__info
+                            .list-articles-item__title 5 lý do tiếng Anh – Anh khác Anh – Mỹ du học sinh cần biết
+                            .list-articles-item__date Posted: Nov 30, 2020
+                  .widjet.widjet-tags-cloud
+                    .widjet__title All Tags
+                    ul.tags-list
+                      li
+                        a(href='#!') HỌC TIẾNG
+                      li
+                        a(href='#!') MẸO HỌC TIẾNG
+                      li
+                        a(href='#!') NĂM MỚI
+                      li
+                        a(href='#!') TIẾNG ANH
+                      li
+                        a(href='#!') VĂN HÓA
+                      li
+                        a(href='#!') SỰ THẬT THÚ VỊ
+                      li
+                        a(href='#!') ANH
+                  .widjet.widjet-gallery
+                    .widjet__title Các khóa học
+                    .uk-grid.uk-grid-small.uk-child-width-1-3(data-uk-grid='' data-uk-lightbox='')
+                      div
+                        img.uk-width-1-1(src='assets/img/blog/KN001.jpeg' alt='gallery')
+                      div
+                        img.uk-width-1-1(src='assets/img/blog/KN002.jpeg' alt='gallery')
+                      div
+                        img.uk-width-1-1(src='assets/img/blog/KN003.jpeg' alt='gallery')
+                      div
+                        img.uk-width-1-1(src='assets/img/blog/KN004.jpeg' alt='gallery')
+                      div
+                        img.uk-width-1-1(src='assets/img/blog/OT003.png' alt='gallery')
+                      div
+                        img.uk-width-1-1(src='assets/img/blog/TN001.jpeg' alt='gallery')
+                      div
+                        img.uk-width-1-1(src='assets/img/blog/TNH001.jpeg' alt='gallery')
+                      div
+                        img.uk-width-1-1(src='assets/img/blog/TNH002.jpeg' alt='gallery')
+                      div
+                        img.uk-width-1-1(src='assets/img/blog/TNH003.jpeg' alt='gallery')
+      footer.page-footer(style='background-color: #FCF7F7;')
+        .page-footer__top
+          .uk-container
+            .page-footer__logo
+              .logo
+                a.logo__link(href='home')
+                  img.logo__img(src='assets/img/logo.png' alt='logo')
+            .page-footer__contacts
+              .contact-item-box
+                .contact-item-box__title Địa chỉ 
+                .contact-item-box__value
+                  | 38C - 39C, quốc lộ 1A,
+                  br
+                  |  Tân Thới Hiệp, Quận 12, Tp.HCM
+              .contact-item-box
+                .contact-item-box__title Mở cửa
+                .contact-item-box__value
+                  | Thứ 2 - Thứ 7: 10:00 AM – 11:30 PM
+                  br
+                  |  Chủ nhật: 9:00 AM – 4:00 PM
+              .contact-item-box
+                .contact-item-box__title Liên hệ
+                .contact-item-box__value
+                  | Email: 
+                  a(href='mailto:cloudythy@gmail.com') t2e@gmail.com
+                  br
+                  |  Điện thoại:
+                  a(href='tel:0394143031')  0394143031
+        .page-footer__middle
+          .uk-container
+            ul.uk-navbar-nav
+              li
+                a(href='/') Trang chủ
+              li
+                a(href='catalog') Khóa học
+              li
+                a(href='branch') Chi nhánh
+              li
+                a(href='branch') Về chúng tôi
+              li
+                a(href='blog') Tin tức
+              li
+                a(href='contacts') Liên hệ
+        .page-footer__bottom
+          .uk-container
+            .page-footer__social
+              ul.social
+                li.social-item
+                  a.social-link(href='#!')
+                    i.fab.fa-twitter
+                li.social-item
+                  a.social-link(href='#!')
+                    i.fab.fa-facebook-f
+                li.social-item
+                  a.social-link(href='#!')
+                    i.fab.fa-linkedin-in
+                li.social-item
+                  a.social-link(href='#!')
+                    i.fab.fa-google-plus-g
+                li.social-item
+                  a.social-link(href='#!')
+                    i.fab.fa-youtube
+            .page-footer__copy
+              span ©2018 t2e
+              a(href='#!') Terms and Conditions
+        #offcanvas(data-uk-offcanvas='overlay: true')
+          .uk-offcanvas-bar
+            button.uk-offcanvas-close(type='button' data-uk-close='')
+            .uk-margin-top
+              ul.uk-nav
+                li
+                  a(href='/') Trang chủ
+                li
+                  a(href='catalogs') Khóa học
+                li
+                  a(href='branch') Chi nhánh
+                li
+                  a(href='home') Về chúng tôi
+                li
+                  a(href='blog') Tin tức
+                li
+                  a(href='contacts') Liên hệ
+            hr.uk-margin
+            ul.uk-nav.uk-nav-parent-icon(data-uk-nav='')
+              li.uk-parent
+                a(href='catalog') Khóa thiếu nhi
+              li.uk-parent
+                a(href='catalog') Khóa thiếu niên
+              li.uk-parent
+                a(href='catalog') Khóa ôn thi
+              li.uk-parent
+                a(href='catalog') Khóa kỹ năng
+            hr.uk-margin
+            .uk-margin-bottom
+              .block-with-phone
+                img(src='assets/img/icons/delivery.svg' alt='delivery' data-uk-svg='')
+                div
+                  span Liên hệ ngay với chúng tôi
+                  a(href='tel:13205448749') 0394143031
+        #callback.uk-flex-top(data-uk-modal='')
+          .uk-modal-dialog.uk-modal-body.uk-margin-auto-vertical
+            button.uk-modal-close-default(type='button' data-uk-close='')
+            p
+        #modal-full.uk-modal-full.uk-modal(data-uk-modal='')
+          .uk-modal-dialog.uk-flex.uk-flex-center.uk-flex-middle(data-uk-height-viewport='')
+            button.uk-modal-close-full(type='button' data-uk-close='')
+            form.uk-search.uk-search-large
+              input.uk-search-input.uk-text-center(type='search' placeholder='Search...' autofocus='')
+    script(src='assets/js/jquery.min.js')
+    script(src='assets/js/uikit.min.js')
+    script(src='assets/js/uikit-icons.min.js')
+    script(src='assets/js/main.js')
+    script(src='assets/js/fontawesome.all.min.js')

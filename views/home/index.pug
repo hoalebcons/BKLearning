@@ -1,0 +1,422 @@
+doctype html
+head
+  meta(charset='utf-8')
+  title BKLearn
+  meta(content='Chernyh Mihail' name='author')
+  meta(content='Spedito - All in one place' name='description')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  meta(name='HandheldFriendly' content='true')
+  meta(name='format-detection' content='telephone=no')
+  meta(content='IE=edge' http-equiv='X-UA-Compatible')
+  link(rel='shortcut icon' href='assets/img/logoW.png' type='image/x-icon')
+  link(rel='stylesheet' href='assets/css/uikit.min.css')
+  link(rel='stylesheet' href='assets/css/main.css')
+  // <link rel="stylesheet" href="assets/css/dropdown.css">
+  link#dm-light(rel='stylesheet' href='assets/css/light.css')
+  link(rel='preconnect' href='https://fonts.googleapis.com')
+  link(rel='preconnect' href='https://fonts.gstatic.com' crossorigin='')
+  link(href='https://fonts.googleapis.com/css2?family=Lobster&display=swap' rel='stylesheet')
+// Loader
+#page-preloader
+  span.spinner.border-t_second_b.border-t_prim_a
+// Loader end
+.page-wrapper
+  header.page-header
+    .page-header__top
+      .uk-container
+        nav.uk-navbar-container.uk-navbar-transparent(data-uk-navbar='')
+          .uk-navbar-left
+            button.uk-button(type='button' data-target='#offcanvas' data-uk-toggle='' data-uk-icon='menu')
+            ul.uk-navbar-nav
+              li
+                a(href='/home') TRANG CHỦ
+              li
+                a(href='/catalog') KHÓA HỌC
+              //
+                <li>
+                <div class="dropdown">
+                <a href="page-catalog-sidebar.html"><button class="dropbtn">KHÓA HỌC</button></a>
+                <div class="dropdown-content">
+                <a href="#">KHÓA THIẾU NHI</a>
+                <a href="#">KHÓA THIẾU NIÊN</a>
+                <a href="#">KHÓA ÔN THI</a>
+                <a href="#">KHÓA KỸ NĂNG</a>
+                </div>
+                </div>
+                </li>
+              li
+                a(href='/branch') CHI NHÁNH
+          .uk-navbar-center
+            .logo
+              .logo__box
+                a(href='/home')
+                  img.logo__img.logo__img--full(src='assets/img/logo.png' alt='logo')
+          .uk-navbar-right
+            ul.uk-navbar-nav
+              li
+                a(href='/home#about_us') VỀ CHÚNG TÔI
+              li
+                a(href='/blog') TIN TỨC
+              li
+                a(href='/contact') LIÊN HỆ
+    .page-header__bottom
+      .uk-container
+        .uk-navbar-container.uk-navbar-transparent(data-uk-navbar='')
+          .uk-navbar-left
+            div
+              .block-with-phone
+                img(src='assets/img/icons/delivery.svg' alt='delivery' data-uk-svg='')
+                div
+                  span Liên hệ ngay với chúng tôi
+                  a(href='tel:13205448749') 0394143031
+          .uk-navbar-center
+          .uk-navbar-right
+            .other-links
+              ul.other-links-list
+                li
+                  a(href='#modal-full' data-uk-toggle='')
+                    span(data-uk-icon='search')
+                li
+                  a(href='/login')
+                    span(data-uk-icon='user')
+                li
+                  a(href='#')
+                    span(data-uk-icon='cart')
+  main.page-main
+    .section-first-screen
+      .first-screen__slideshow
+        div(data-uk-slideshow='min-height: 400; max-height: 785; autoplay: true')
+          .uk-position-relative(tabhome='-1')
+            ul.uk-slideshow-items
+              li
+                .uk-position-cover.uk-animation-kenburns.uk-animation-reverse.uk-transform-origin-center-left
+                  img(src='assets/img/pages/home/slider-1.jpg' alt='slider-1' data-uk-cover='')
+              li
+                .uk-position-cover.uk-animation-kenburns.uk-animation-reverse.uk-transform-origin-center-left
+                  img(src='assets/img/pages/home/slider-2.jpg' alt='slider-2' data-uk-cover='')
+              li
+                .uk-position-cover.uk-animation-kenburns.uk-animation-reverse.uk-transform-origin-center-left
+                  img(src='assets/img/pages/home/slider-3.jpg' alt='slider-3' data-uk-cover='')
+          .first-screen__content
+            .uk-container
+              nav.category-nav
+                nav.uk-navbar-container.uk-navbar-transparent(data-uk-navbar='')
+                  ul.uk-navbar-nav
+                    li
+                      a(href='/catalog')
+                        .nav-item
+                          span.nav-item__icon
+                            img(src='assets/img/icons/menu/thieunhi.png' alt='face care' data-uk-svg='')
+                          span.nav-item__text Khoa học
+                    li
+                      a(href='/catalog')
+                        .nav-item
+                          span.nav-item__icon
+                            img(src='assets/img/icons/menu/thieunien.png' alt='hair care' data-uk-svg='')
+                          span.nav-item__text Ngôn ngữ
+                    li
+                      a(href='/catalog')
+                        .nav-item
+                          span.nav-item__icon
+                            img(src='assets/img/icons/menu/onthi.png' alt='lips care' data-uk-svg='')
+                          span.nav-item__text Luyện thi
+                    li
+                      a(href='/catalog')
+                        .nav-item
+                          span.nav-item__icon
+                            img(src='assets/img/icons/menu/kynang.png' alt='body care' data-uk-svg='')
+                          span.nav-item__text Kỹ năng
+              .first-screen__box(style='padding-top:90px')
+                h2.first-screen__title BKLearn
+          .slideshow-dotnav.uk-position-bottom-center
+            ul.uk-slideshow-nav.uk-dotnav.uk-flex-center
+    .section-about
+      a#about_us
+      .uk-section.uk-container
+        .uk-grid.uk-flex-middle(class='uk-child-width-1-2@m' data-uk-grid='')
+          .uk-text-center
+            img(src='assets/img/pages/home/image-about.jpg' alt='')
+          div
+            .section-title.wave
+              h1 V&#x1EC1; ch&uacute;ng t&ocirc;i
+            .section-content
+              p
+                | BKLearn l&agrave; trung t&acirc;m anh ng&#x1EEF; n&abreve;ng &dstrok;&#x1ED9;ng v&#x1EDB;i nhi&#x1EC1;u chi nh&aacute;nh tr&ecirc;n kh&#x1EAF;p c&#x1EA3; n&#x1B0;&#x1EDB;c. Trung t&acirc;m quy t&#x1EE5; nhi&#x1EC1;u gi&aacute;o vi&ecirc;n uy t&iacute;n v&agrave; c&aacute;c kh&oacute;a h&#x1ECD;c h&#x1EA5;p d&#x1EAB;n, nh&#x1EAD;n &dstrok;&#x1B0;&#x1EE3;c ph&#x1EA3;n h&#x1ED3;i t&#x1ED1;t t&#x1EEB; c&aacute;c h&#x1ECD;c vi&ecirc;n v&agrave; ph&#x1EE5; huynh. C&#x1A1; s&#x1EDF; v&#x1EAD;t ch&#x1EA5;t v&agrave;
+                | gi&aacute;o tr&igrave;nh c&#x1EE7;a trung t&acirc;m lu&ocirc;n &dstrok;&#x1EA3;m b&#x1EA3;o t&#x1EA1;o &dstrok;i&#x1EC1;u ki&#x1EC7;n t&#x1ED1;t nh&#x1EA5;t cho kh&aacute;ch h&agrave;ng c&#x1EE7;a m&igrave;nh.
+              p
+                | V&#x1EDB;i m&ocirc;i tr&#x1B0;&#x1EDD;ng n&abreve;ng &dstrok;&#x1ED9;ng v&agrave; uy t&iacute;n, T2E s&#x1EBD; l&agrave; m&#x1ED9;t s&#x1EF1; l&#x1EF1;a ch&#x1ECD;n tuy&#x1EC7;t v&#x1EDD;i n&#x1EBF;u b&#x1EA1;n &dstrok;ang mu&#x1ED1;n c&#x1EA3;i thi&#x1EC7;n c&aacute;c k&#x1EF9; n&abreve;ng ti&#x1EBF;ng anh c&#x1EE7;a m&igrave;nh.
+              .uk-margin-medium-top
+                a.uk-button(href='/catalog')
+                  span &Dstrok;&abreve;ng k&yacute; ngay
+                  img.uk-margin-small-left
+    .section-features
+      .uk-section.uk-container
+        .uk-grid(class='uk-child-width-1-3@s' data-uk-grid='')
+          div
+            .feature-item
+              .feature-item__icon
+                img(src='assets/img/icons/check.svg' alt='feature')
+              .feature-item__title Ch&#x1B0;&#x1A1;ng tr&igrave;nh n&abreve;ng &dstrok;&#x1ED9;ng
+              .feature-item__desc
+                | Ch&#x1B0;&#x1A1;ng tr&igrave;nh theo l&#x1ED1;i v&#x1EEB;a h&#x1ECD;c v&#x1EEB;a ch&#x1A1;i, k&#x1EBF;t h&#x1EE3;p v&#x1EDB;i c&aacute;c ho&#x1EA1;t &dstrok;&#x1ED9;ng ngo&#x1EA1;i kh&oacute;a vui nh&#x1ED9;n.
+          div
+            .feature-item
+              .feature-item__icon
+                img(src='assets/img/icons/check.svg' alt='feature')
+              .feature-item__title Gi&aacute;o vi&ecirc;n gi&#x1ECF;i
+              .feature-item__desc
+                | Nh&#x1EEF;ng gi&aacute;o vi&ecirc;n v&agrave; tr&#x1EE3; gi&#x1EA3;ng c&#x1EE7;a ch&uacute;ng t&ocirc;i &dstrok;&#x1EC1;u c&oacute; tr&igrave;nh &dstrok;&#x1ED9; chuy&ecirc;n m&ocirc;n cao v&agrave; &dstrok;&#x1EA7;y nhi&#x1EC7;t huy&#x1EBF;t.
+          div
+            .feature-item
+              .feature-item__icon
+                img(src='assets/img/icons/check.svg' alt='feature')
+              .feature-item__title Gi&aacute;o tr&igrave;nh chu&#x1EA9;n
+              .feature-item__desc
+                | Gi&aacute;o tr&igrave;nh lu&ocirc;n &dstrok;&#x1B0;&#x1EE3;c c&#x1EAD;p nh&#x1EAD;t, gi&aacute;o tr&igrave;nh chu&#x1EA9;n qu&#x1ED1;c t&#x1EBF; k&#x1EBF;t h&#x1EE3;p v&#x1EDB;i t&agrave;i li&#x1EC7;u &dstrok;&#x1ED9;c quy&#x1EC1;n.
+    .section-chart
+      .uk-margin-large-top.uk-container
+        section
+          div(style='text-align: center;')
+            h1 M&#x1ED9;t v&agrave;i s&#x1ED1; li&#x1EC7;u th&#x1ED1;ng k&ecirc;
+          br
+          br
+          br
+          ul.pr-charts.nospace(style='text-align: center;')
+            li.pr-chart-ctrl(data-animate='false')
+              .pr-chart(data-percent='50')
+                i
+              p H&#x1ECD;c vi&ecirc;n ti&#x1EBF;n b&#x1ED9; v&#x1B0;&#x1EE3;t b&#x1EAD;c
+            li.pr-chart-ctrl(data-animate='false')
+              .pr-chart(data-percent='60')
+                i
+              p Theo h&#x1ECD;c d&agrave;i h&#x1EA1;n
+            li.pr-chart-ctrl(data-animate='false')
+              .pr-chart(data-percent='75')
+                i
+              p &Dstrok;&#x1EA1;t &dstrok;&#x1B0;&#x1EE3;c m&#x1EE5;c ti&ecirc;u
+            li.pr-chart-ctrl(data-animate='false')
+              .pr-chart(data-percent='90')
+                i
+              p H&#x1ECD;c vi&ecirc;n h&agrave;i l&ograve;ng
+          // ################################################################################################
+    br
+    br
+    br
+    .section-member
+      .wrapper.gradient
+        .uk-margin-large-top.uk-container
+          div(style='text-align: center;')
+            br
+            h1(style='color: black;') Nh&#x1EEF;ng nh&agrave; s&aacute;ng l&#x1EAD;p &dstrok;&#x1EA7;y nhi&#x1EC7;t huy&#x1EBF;t
+            br
+            br
+          //- .uk-grid(class='uk-child-width-1-4@s' data-uk-grid='' style='text-align: center; color: #050538; font-size: 20px; font-weight: 500;')
+          //-   .uk-width-1-4
+          //-     img(src='assets/img/pages/home/member_1.jpg' alt='Hà Duy Anh')
+          //-     p H&Agrave; LE NGOC HOA
+          //-   .uk-width-1-4
+          //-     img(src='assets/img/pages/home/member_4.jpg' alt='Hà Duy Anh')
+          //-     p NGUY&#x1EC4;N MAI THY
+          //-   .uk-width-1-4
+          //-     img(src='assets/img/pages/home/member_2.jpg' alt='Hà Duy Anh')
+          //-     p TR&#x1EA6;N PH&#x1EA0;M TH&Aacute;I H&Ograve;A
+          //-   .uk-width-1-4
+          //-     img(src='assets/img/pages/home/member_3.jpg' alt='Hà Duy Anh')
+          //-     p NGUY&#x1EC4;N TH&#x1EE6;Y NG&#x1ECC;C
+          // ################################################################################################
+    br
+    br
+    br
+    .section-feedback(style='background-color: #050538;')
+      .uk-margin-large-top.uk-container
+        div(style='text-align: center;')
+          br
+          h1(style='color: whitesmoke') Ph&#x1EE5; huynh v&agrave; h&#x1ECD;c vi&ecirc;n n&oacute;i g&igrave; v&#x1EC1; ch&uacute;ng t&ocirc;i
+          br
+          br
+          br
+        .uk-grid(class='uk-child-width-1-2@s' data-uk-grid='')
+          .uk-width-1-2
+            img(src='assets/img/pages/home/feedback_1.png' alt='')
+            h5(style='color: white; margin-bottom: 0%; margin-top: 10px;') Anh &Dstrok;inh Gia Quang
+            em Ph&#x1EE5; huynh em &Dstrok;inh Gia B&#x1EA3;o
+            div(style='color: white; margin-top: 10px;')
+              | &quot;C&aacute;c gi&#x1EA3;ng vi&ecirc;n th&acirc;n thi&#x1EC7;n v&agrave; t&#x1EAD;n t&igrave;nh gi&#x1EA3;ng d&#x1EA1;y, con t&ocirc;i &dstrok;&atilde; ti&#x1EBF;n b&#x1ED9; r&#x1EA5;t nhi&#x1EC1;u. T&ocirc;i s&#x1EBD; ti&#x1EBF;p t&#x1EE5;c cho con h&#x1ECD;c th&ecirc;m c&aacute;c kh&oacute;a kh&aacute;c &#x1EDF; T2E.&quot;
+          .uk-width-1-2
+            img(src='assets/img/pages/home/feedback_2.png' alt='')
+            h5(style='color: white; margin-bottom: 0%; margin-top: 10px;') Ch&#x1ECB; Cao Th&#x1ECB; Thanh Mai
+            em H&#x1ECD;c vi&ecirc;n kh&oacute;a Ti&#x1EBF;ng anh kinh doanh
+            div(style='color: white; margin-top: 10px;')
+              | &quot;C&aacute;c t&#x1EEB; v&#x1EF1;ng v&agrave; t&igrave;nh hu&#x1ED1;ng &dstrok;&#x1EB7;t ra r&#x1EA5;t thi&#x1EBF;t th&#x1EF1;c v&agrave; c&oacute; t&iacute;nh &#x1EE9;ng d&#x1EE5;ng cao trong m&ocirc;i tr&#x1B0;&#x1EDD;ng c&ocirc;ng s&#x1EDF; h&agrave;ng ng&agrave;y, t&ocirc;i r&#x1EA5;t h&agrave;i l&ograve;ng.&quot;
+        br
+        br
+        br
+        br
+    .section-about
+      .uk-margin-large-top.uk-container.uk-container-small
+        article.article-full
+          .article-full__image
+            a(href='')
+              img(src='assets/img/pages/home/introbanner.jpg' alt='img-article')
+          .article-full__content
+            h1 BKLearn - Just a small project for the assignment
+            p
+              | Ti&#x1EBF;ng anh l&agrave; m&#x1ED9;t k&#x1EF9; n&abreve;ng thi&#x1EBF;t y&#x1EBF;u trong b&#x1ED1;i c&#x1EA3;nh to&agrave;n c&#x1EA7;u h&oacute;a hi&#x1EC7;n nay. Kh&ocirc;ng d&#x1EEB;ng l&#x1EA1;i &#x1EDF; vi&#x1EC7;c h&#x1ECD;c trong ch&#x1B0;&#x1A1;ng tr&igrave;nh ph&#x1ED5; th&ocirc;ng, nhu c&#x1EA7;u h&#x1ECD;c ti&#x1EBF;ng anh &dstrok;ang t&abreve;ng cao&#x1EDF; m&#x1ECD;i l&#x1EE9;a tu&#x1ED5;i d&#x1EAB;n &dstrok;&#x1EBF;n s&#x1EF1; ra &dstrok;&#x1EDD;i c&#x1EE7;a c&aacute;c chu&#x1ED7;i trung t&acirc;m anh
+              | ng&#x1EEF;. Nh&#x1EB1;m &dstrok;&#x1A1;n gi&#x1EA3;n h&oacute;a qu&aacute; tr&igrave;nh &dstrok;&abreve;ng k&yacute; c&utilde;ng nh&#x1B0; gi&uacute;p kh&aacute;ch h&agrave;ng d&#x1EC5; d&agrave;ng t&igrave;m hi&#x1EC3;u c&aacute;c th&ocirc;ng tin c&#x1EA7;n thi&#x1EBF;t,t&#x1EEB; &dstrok;&oacute; ti&#x1EBF;p c&#x1EAD;n nhi&#x1EC1;u kh&aacute;ch h&agrave;ng h&#x1A1;n, c&aacute;c h&#x1EC7; th&#x1ED1;ng trung t&acirc;m anh ng&#x1EEF; th&#x1B0;&#x1EDD;ng c&oacute; h&#x1EC7; th&#x1ED1;ng &dstrok;&abreve;ng k&yacute; tr&#x1EF1;c tuy&#x1EBF;n.
+            p
+              | Do &dstrok;&oacute;, trong b&agrave;i t&#x1EAD;p l&#x1EDB;n n&agrave;y, nh&oacute;m 2 &dstrok;&atilde; quy&#x1EBF;t &dstrok;&#x1ECB;nh hi&#x1EC7;n th&#x1EF1;c trang web cho vi&#x1EC7;c &dstrok;&abreve;ng k&yacute; h&#x1ECD;c t&#x1EA1;i chu&#x1ED7;i trung t&acirc;m anh ng&#x1EEF;.
+            h2 Special Thanks
+            div
+              img.uk-width-1-1(src='assets/img/pages/home/thanks.jpg' alt='article')
+            p
+              | C&aacute;c th&agrave;nh vi&ecirc;n Nh&oacute;m 2 xin g&#x1EED;i l&#x1EDD;i c&#x1EA3;m &#x1A1;n ch&acirc;n th&agrave;nh &dstrok;&#x1EBF;n c&ocirc; V&otilde; Th&#x1ECB; Ng&#x1ECD;c Ch&acirc;u v&agrave; c&aacute;c b&#x1EA1;n kh&aacute;c &dstrok;&atilde; t&#x1EAD;n t&igrave;nh gi&uacute;p &dstrok;&#x1EE1; &dstrok;&#x1EC3; t&#x1EA1;o n&ecirc;n trang web n&agrave;y.
+            h2 T&#x1ED5;ng quan c&aacute;c ch&#x1EE9;c n&abreve;ng c&#x1EE7;a trang web
+            p
+              | Th&ocirc;ng qua h&#x1EC7; th&#x1ED1;ng n&agrave;y, qu&#x1EA3;n l&yacute; gi&aacute;o d&#x1EE5;c th&#x1EF1;c hi&#x1EC7;n thao t&aacute;c &dstrok;i&#x1EC1;u ch&#x1EC9;nh kh&oacute;a h&#x1ECD;c v&agrave; l&#x1EDB;p h&#x1ECD;c, bao g&#x1ED3;m th&ecirc;m, x&oacute;a, ch&#x1EC9;nh s&#x1EED;a. Ngo&agrave;i ra, qu&#x1EA3;n l&yacute; c&ograve;n &dstrok;&#x1B0;&#x1EE3;c c&#x1EA5;p quy&#x1EC1;n &dstrok;&#x1EC3; xem th&ocirc;ng tin c&#x1EE7;a m&#x1ED7;i kh&oacute;a h&#x1ECD;c, m&#x1ED7;i l&#x1EDB;p h&#x1ECD;c v&agrave; c&aacute;c h&#x1ECD;c vi&ecirc;n trong
+              | l&#x1EDB;p h&#x1ECD;c &dstrok;&oacute;. H&#x1EC7; th&#x1ED1;ng c&ograve;n h&#x1ED7; tr&#x1EE3; &dstrok;&#x1B0;a ra c&aacute;c s&#x1ED1; li&#x1EC7;u th&#x1ED1;ng k&ecirc; &dstrok;&#x1EC3; &dstrok;&aacute;nh gi&aacute; hi&#x1EC7;u qu&#x1EA3; kinh doanh nh&#x1B0; s&#x1ED1; l&#x1EDB;p &dstrok;ang m&#x1EDF;, s&#x1ED1; l&#x1EDB;p c&#x1EE7;a t&#x1EEB;ng kh&oacute;a h&#x1ECD;c, trung b&igrave;nh m&#x1ED7;i ng&agrave;y c&oacute; bao nhi&ecirc;u h&#x1ECD;c vi&ecirc;n &dstrok;&abreve;ng k&yacute;, m&#x1ED7;i chi nh&aacute;nh c&oacute; bao nhi&ecirc;u h&#x1ECD;c
+              | vi&ecirc;n theo h&#x1ECD;c,..
+            p
+              | T&#x1B0;&#x1A1;ng t&#x1EF1; v&#x1EDB;i qu&#x1EA3;n l&yacute;, nh&#x1EEF;ng nh&acirc;n vi&ecirc;n c&oacute; ch&#x1EE9;c v&#x1EE5; l&agrave; gi&aacute;o vi&ecirc;n hay tr&#x1EE3; gi&#x1EA3;ng c&utilde;ng &dstrok;&#x1B0;&#x1EE3;c ph&eacute;p xem danh s&aacute;ch c&aacute;c kh&oacute;a h&#x1ECD;c, c&aacute;c l&#x1EDB;p h&#x1ECD;c c&ugrave;ng th&ocirc;ng tin chi ti&#x1EBF;t. B&ecirc;n c&#x1EA1;nh &dstrok;&oacute;, h&#x1EC7; th&#x1ED1;ng c&utilde;ng h&#x1ED7; tr&#x1EE3; h&#x1ECD; xu&#x1EA5;t ra danh s&aacute;ch c&aacute;c l&#x1EDB;p h&#x1ECD;c
+              | b&#x1EA3;n th&acirc;n ph&#x1EE5; tr&aacute;ch v&#x1EDB;i c&aacute;c th&ocirc;ng tin k&egrave;m theo hay xu&#x1EA5;t ra danh s&aacute;ch th&ocirc;ng tin c&aacute;c h&#x1ECD;c vi&ecirc;n &dstrok;ang theo h&#x1ECD;c t&#x1EA1;i m&#x1ED9;t l&#x1EDB;p b&#x1EA5;t k&#x1EF3; trong nh&#x1EEF;ng l&#x1EDB;p b&#x1EA3;n th&acirc;n ph&#x1EE5; tr&aacute;ch.
+            p
+              | &Dstrok;&#x1ED1;i v&#x1EDB;i kh&aacute;ch h&agrave;ng, h&#x1EC7; th&#x1ED1;ng cho ph&eacute;p th&#x1EF1;c hi&#x1EC7;n &dstrok;&abreve;ng k&yacute; m&#x1ED9;t l&#x1EDB;p h&#x1ECD;c v&agrave; h&#x1EE7;y &dstrok;&abreve;ng k&yacute; l&#x1EDB;p h&#x1ECD;c &dstrok;&oacute; trong th&#x1EDD;i h&#x1EA1;n 7 ng&agrave;y. Ngo&agrave;i ra, trong c&ugrave;ng m&#x1ED9;t kh&oacute;a h&#x1ECD;c, n&#x1EBF;u th&#x1ECF;a c&aacute;c &dstrok;i&#x1EC1;u ki&#x1EC7;n r&agrave;ng bu&#x1ED9;c th&igrave; h&#x1ECD;c vi&ecirc;n c&oacute; th&#x1EC3; chuy&#x1EC3;n t&#x1EEB; l&#x1EDB;p n&agrave;y
+              | sang l&#x1EDB;p kh&aacute;c khi c&oacute; nhu c&#x1EA7;u. H&#x1ECD;c vi&ecirc;n c&oacute; th&#x1EC3; &dstrok;i&#x1EC1;n v&agrave; ch&#x1EC9;nh s&#x1EED;a th&ocirc;ng tin c&aacute; nh&acirc;n l&#x1B0;u tr&ecirc;n t&agrave;i kho&#x1EA3;n c&#x1EE7;a m&igrave;nh. &Dstrok;&#x1EC3; h&#x1ED7; tr&#x1EE3; qu&aacute; tr&igrave;nh &dstrok;&abreve;ng k&yacute;, h&#x1ECD;c vi&ecirc;n c&oacute; th&#x1EC3; xem danh s&aacute;ch kh&oacute;a h&#x1ECD;c, l&#x1EDB;p h&#x1ECD;c v&agrave; danh s&aacute;ch c&aacute;c chi nh&aacute;nh. V&#x1EC1;
+              | ph&#x1EA7;n c&aacute; nh&acirc;n h&#x1ECD;c vi&ecirc;n, c&oacute; th&#x1EC3; xem c&aacute;c l&#x1EDB;p h&#x1ECD;c m&igrave;nh &dstrok;ang &dstrok;&abreve;ng k&yacute; v&agrave; theo d&otilde;i s&#x1EF1; ti&#x1EBF;n b&#x1ED9; c&#x1EE7;a b&#x1EA3;n th&acirc;n qua c&aacute;c kh&oacute;a h&#x1ECD;c &dstrok;&atilde; ho&agrave;n th&agrave;nh. H&#x1EC7; th&#x1ED1;ng c&oacute; th&#x1EC3; tr&#x1EE3; gi&uacute;p h&#x1ECD;c vi&ecirc;n l&#x1ECD;c ra nh&#x1EEF;ng kh&oacute;a h&#x1ECD;c m&agrave; ng&#x1B0;&#x1EDD;i &dstrok;&oacute; &dstrok;&aacute;p &#x1EE9;ng &dstrok;&#x1B0;&#x1EE3;c nhu c&#x1EA7;u
+              | tr&igrave;nh &dstrok;&#x1ED9; hay &dstrok;&#x1B0;a ra nh&#x1EEF;ng chi nh&aacute;nh g&#x1EA7;n v&#x1EDB;i n&#x1A1;i sinh s&#x1ED1;ng. Trong qu&aacute; tr&igrave;nh &dstrok;&abreve;ng k&yacute; h&#x1ECD;c vi&ecirc;n c&utilde;ng c&oacute; th&#x1EC3; l&agrave;m b&agrave;i ki&#x1EC3;m tra tr&igrave;nh &dstrok;&#x1ED9; &dstrok;&#x1EC3; c&#x1EAD;p nh&#x1EAD;t tr&igrave;nh &dstrok;&#x1ED9;.
+            .section-first-screen.border-top(style='padding-bottom:30px')
+              .first-screen__slideshow
+                div(data-uk-slideshow='min-height: 400; max-height: 785; autoplay: true')
+                  .uk-position-relative(tabhome='-1')
+                    ul.uk-slideshow-items
+                      li
+                        .uk-position-cover.uk-transform-origin-center-left
+                          p
+                          img(src='assets/img/pages/home/bottom_pic1.jpg' alt='bottom_pic-1' data-uk-cover='')
+                      li
+                        .uk-position-coveruk-transform-origin-center-left
+                          img(src='assets/img/pages/home/bottom_pic2.jpg' alt='bottom_pic-2' data-uk-cover='')
+                      li
+                        .uk-position-coveruk-transform-origin-center-left
+                          img(src='assets/img/pages/home/bottom_pic3.jpg' alt='bottom_pic-3' data-uk-cover='')
+                      li
+                        .uk-position-coveruk-transform-origin-center-left
+                          img(src='assets/img/pages/home/bottom_pic4.jpg' alt='bottom_pic-4' data-uk-cover='')
+                      li
+                        .uk-position-coveruk-transform-origin-center-left
+                          img(src='assets/img/pages/home/bottom_pic5.jpg' alt='bottom_pic-5' data-uk-cover='')
+                  .slideshow-dotnav.uk-position-bottom-center
+                    ul.uk-slideshow-nav.uk-dotnav.uk-flex-center
+footer.page-footer(style='background-color: #FCF7F7;')
+  .page-footer__top
+    .uk-container
+      .page-footer__logo
+        .logo
+          a.logo__link(href='/home')
+            img.logo__img(src='assets/img/logo.png' alt='logo')
+      .page-footer__contacts
+        .contact-item-box
+          .contact-item-box__title &Dstrok;&#x1ECB;a ch&#x1EC9; 
+          .contact-item-box__value
+            | 38C - 39C, qu&#x1ED1;c l&#x1ED9; 1A,
+            br
+            |  T&acirc;n Th&#x1EDB;i Hi&#x1EC7;p, Qu&#x1EAD;n 12, Tp.HCM
+        .contact-item-box
+          .contact-item-box__title M&#x1EDF; c&#x1EED;a
+          .contact-item-box__value
+            | Th&#x1EE9; 2 - Th&#x1EE9; 7: 10:00 AM &ndash; 11:30 PM
+            br
+            |  Ch&#x1EE7; nh&#x1EAD;t: 9:00 AM &ndash; 4:00 PM
+        .contact-item-box
+          .contact-item-box__title Li&ecirc;n h&#x1EC7;
+          .contact-item-box__value
+            | Email: 
+            a(href='mailto:cloudythy@gmail.com') t2e@gmail.com
+            br
+            |  &Dstrok;i&#x1EC7;n tho&#x1EA1;i:
+            a(href='tel:0394143031')  0394143031
+  .page-footer__middle
+    .uk-container
+      ul.uk-navbar-nav
+        li
+          a(href='/home') Trang ch&#x1EE7;
+        li
+          a(href='/catalog') Kh&oacute;a h&#x1ECD;c
+        li
+          a(href='/branch') Chi nh&aacute;nh
+        li
+          a(href='/home#about_us') V&#x1EC1; ch&uacute;ng t&ocirc;i
+        li
+          a(href='/blog') Tin t&#x1EE9;c
+        li
+          a(href='/contact') Li&ecirc;n h&#x1EC7;
+  .page-footer__bottom
+    .uk-container
+      .page-footer__social
+        ul.social
+          li.social-item
+            a.social-link(href='#!')
+              i.fab.fa-twitter
+          li.social-item
+            a.social-link(href='#!')
+              i.fab.fa-facebook-f
+          li.social-item
+            a.social-link(href='#!')
+              i.fab.fa-linkedin-in
+          li.social-item
+            a.social-link(href='#!')
+              i.fab.fa-google-plus-g
+          li.social-item
+            a.social-link(href='#!')
+              i.fab.fa-youtube
+      .page-footer__copy
+        span &copy;2018 t2e
+        a(href='#!') Terms and Conditions
+  #offcanvas(data-uk-offcanvas='overlay: true')
+    .uk-offcanvas-bar
+      button.uk-offcanvas-close(type='button' data-uk-close='')
+      .uk-margin-top
+        ul.uk-nav
+          li
+            a(href='/home') Trang ch&#x1EE7;
+          li
+            a(href='/catalog') Kh&oacute;a h&#x1ECD;c
+          li
+            a(href='/branch') Chi nh&aacute;nh
+          li
+            a(href='/home#about_us') V&#x1EC1; ch&uacute;ng t&ocirc;i
+          li
+            a(href='/blog') Tin t&#x1EE9;c
+          li
+            a(href='/contact') Li&ecirc;n h&#x1EC7;
+      hr.uk-margin
+      ul.uk-nav.uk-nav-parent-icon(data-uk-nav='')
+        li.uk-parent
+          a(href='/catalog') Kh&oacute;a thi&#x1EBF;u nhi
+        li.uk-parent
+          a(href='/catalog') Kh&oacute;a thi&#x1EBF;u ni&ecirc;n
+        li.uk-parent
+          a(href='/catalog') Kh&oacute;a &ocirc;n thi
+        li.uk-parent
+          a(href='/catalog') Kh&oacute;a k&#x1EF9; n&abreve;ng
+      hr.uk-margin
+      .uk-margin-bottom
+        .block-with-phone
+          img(src='assets/img/icons/delivery.svg' alt='delivery' data-uk-svg='')
+          div
+            span Li&ecirc;n h&#x1EC7; ngay v&#x1EDB;i ch&uacute;ng t&ocirc;i
+            a(href='tel:13205448749') 0394143031
+  #callback.uk-flex-top(data-uk-modal='')
+    .uk-modal-dialog.uk-modal-body.uk-margin-auto-vertical
+      button.uk-modal-close-default(type='button' data-uk-close='')
+      p
+  #modal-full.uk-modal-full.uk-modal(data-uk-modal='')
+    .uk-modal-dialog.uk-flex.uk-flex-center.uk-flex-middle(data-uk-height-viewport='')
+      button.uk-modal-close-full(type='button' data-uk-close='')
+      form.uk-search.uk-search-large
+        input.uk-search-input.uk-text-center(type='search' placeholder='Search...' autofocus='')
+script(src='assets/js/jquery.min.js')
+script(src='assets/js/uikit.min.js')
+script(src='assets/js/uikit-icons.min.js')
+script(src='assets/js/main.js')
+script(src='assets/js/fontawesome.all.min.js')
+script(src='assets/js/jquery.easypiechart.min.js')

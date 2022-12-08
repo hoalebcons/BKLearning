@@ -1,0 +1,88 @@
+extends ../layout.pug
+
+block content
+  .content-wrapper(style='padding-top:0px;')
+    // Content Header (Page header)
+    section.content-header
+      .container-fluid
+        .row.mb-2
+          .col-sm-6
+            h1 Update personal information
+          .col-sm-6
+            ol.breadcrumb.float-sm-right
+              li.breadcrumb-item
+                a(href='http://localhost:3000/main') Home
+              li.breadcrumb-item.active Update personal information
+      // /.container-fluid
+    // Main content
+    section.content
+      .container-fluid
+        .row
+          .col-12             
+            .card
+              // /.card-header
+              .card-body
+                .row
+                    .card-body
+                        h4.card-title Update personal information
+                        form.forms-sample(action="/updatehocvien/update", method = "post")
+                            .row
+                                .col-4
+                                    .form-group
+                                        label(for='exampleInputName1') Surname
+                                        input#exampleInputName1.form-control(type='text' name='fname' placeholder='Surname' value = data.Ho)
+                                .col-4
+                                    .form-group
+                                        label(for='exampleInputName1') Buffer name
+                                        input#exampleInputName1.form-control(type='text' name='bname' placeholder='Buffer name' value = data.Tendem)
+                                .col-4
+                                    .form-group
+                                        label(for='exampleInputName1') Last Name
+                                        input#exampleInputName1.form-control(type='text' name='lname' placeholder='Last Name' value = data.Ten)
+                            .row
+                                .col-4
+                                    .form-group
+                                        label(for='exampleSelectGender') Gender
+                                        select#exampleSelectGender.form-control
+                                            option male
+                                            option female
+                                .col-4
+                                    .form-group
+                                        label(for='exampleInputEmail3') Year of Birth
+                                        input#exampleInputEmail3.form-control(type='number' name='bday'  min="1900" max = "2021" size='4' maxlength='4' placeholder='Year of Birth' value = data.Namsinh)
+                                .col-4
+                                    .form-group
+                                        label(for='exampleInputEmail3') Phone Number
+                                        input#exampleInputEmail3.form-control(type='text' name='pnumber' size='10' maxlength='10' minlength='10' placeholder='Phone Number' value = data.Sodienthoai)
+                            .row      
+                                .col-3                                 
+                                    .form-group
+                                        label(for='exampleInputCity1') Apartment number
+                                        input#exampleInputCity1.form-control(type='text' name='sonha' placeholder='Apartment number' value = data.Sonha)
+                                .col-3  
+                                    .form-group
+                                        label(for='exampleInputCity1') Street
+                                        input#exampleInputCity1.form-control(type='text' name='duong' placeholder='Street' value = data.Duong)
+                                .col-3  
+                                    .form-group
+                                        label(for='exampleInputCity1') District
+                                        input#exampleInputCity1.form-control(type='text' name='quan' placeholder='District' value = data.Quanhuyen)
+                                .col-3  
+                                    .form-group
+                                        label(for='exampleInputCity1') City
+                                        input#exampleInputCity1.form-control(type='text' name='city' placeholder='City' value = data.Tinhtp)
+                            button.btn.btn-primary.mr-2(type='submit') Submit
+                            button.btn.btn-light(onClick="window.location.reload()") Cancel
+
+
+
+
+
+
+
+
+
+block style 
+    //- link(rel="stylesheet", href="/create/turn/index.css")
+block script 
+    script(src="/create/hocvien/index.js")

@@ -1,0 +1,13 @@
+table 
+{
+
+    table-layout:fixed;
+    width:100%;
+   
+}
+.ten{
+    overflow: scroll;
+}
+td,th{
+    overflow: hidden;
+}

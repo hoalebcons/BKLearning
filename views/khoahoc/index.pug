@@ -1,0 +1,56 @@
+extends ../layout.pug
+
+block content
+  .content-wrapper(style='padding-top:0px;')
+    // Content Header (Page header)
+    section.content-header
+      .container-fluid
+        .row.mb-2
+          .col-sm-6
+            h1 Confirm strangers
+          .col-sm-6
+            ol.breadcrumb.float-sm-right
+              li.breadcrumb-item
+                a(href='http://localhost:3000/home') Home
+              li.breadcrumb-item.active Confirm strangers
+      // /.container-fluid
+    // Main content
+    section.content
+      .container-fluid
+        .row
+          .col-12             
+            .card
+              // /.card-header
+              .card-body
+                .row
+                  .col-md-6
+                    .card.tale-bg
+                      img(id='imagecheck'  alt='people')
+                  .col-md-6
+                    .row.row-content
+                      h2 First name:
+                      h2.h2-data(id='firstname')
+                    .row.row-content
+                      h2 Last name:
+                      h2.h2-data(id='lastname')
+                    .row.row-content
+                      h2 Access time:
+                      h2.h2-data(id='timeaccess')
+                    .row.row-content1
+                      button.btn.btn-primary(type='button',id='buttoncheck') 
+                        h1 Confirm
+                      button.btn.btn-danger(type='button',id='buttoncheck1')
+                        h1 Refuse
+ 
+
+
+
+
+
+
+
+
+block style 
+    link(rel="stylesheet", href="/create/turn/index.css")
+block script 
+    script(src="/create/turn/index.js")

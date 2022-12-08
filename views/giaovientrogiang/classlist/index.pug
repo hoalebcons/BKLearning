@@ -1,0 +1,83 @@
+extends ../layout.pug
+
+block content
+  .content-wrapper(style='padding-top:0px;')
+    // Content Header (Page header)
+    section.content-header
+      .container-fluid
+        .row.mb-2
+          .col-sm-6
+            h1 Class list
+          .col-sm-6
+            ol.breadcrumb.float-sm-right
+              li.breadcrumb-item
+                a(href='http://localhost:3000/home') Home
+              li.breadcrumb-item.active class list
+      // /.container-fluid
+    // Main content
+    section.content
+      .container-fluid
+        .row
+          .col-12             
+            .card
+              // /.card-header
+              .card-body
+                .row
+                    .card-body
+                        h3 List of classes in charge
+                        table#TAB-students.table.table-bordered.table-striped
+                            thead
+                                tr.text-center
+                                    th Mã lớp học
+                                    th Ngày bắt đầu
+                                    th Ngày kết thúc
+                                    th Sĩ số
+                                    th Chi nhánh
+                                    th Khóa học
+
+                            tbody 
+                                each lophoc in data
+                                    tr.text-center
+                                        td= lophoc.MaLH
+                                        td= moment(lophoc.Ngaybatdau).format('ll')
+                                        td= moment(lophoc.Ngayketthuc).format('ll')
+                                        td= lophoc.Siso
+                                        td= lophoc.chinhanhMaCN
+                                        td= lophoc.khoahocMaKH
+                .row
+                    .col-md-6
+                        .card-body
+                            h3 List of teachers
+                            table#TAB-students1.table.table-bordered.table-striped
+                                thead
+                                    tr.text-center
+                                        th Mã lớp học
+                                        th Mã giáo viên
+
+                                tbody 
+                                    each lophoc in data1
+                                        tr.text-center
+                                            td= lophoc.lophocMaLH
+                                            td= lophoc.giaovienNhanvien
+                    .col-md-6
+                        .card-body
+                            h3 List of teaching assistants
+                            table#TAB-students2.table.table-bordered.table-striped
+                                thead
+                                    tr.text-center
+                                        th Mã lớp học
+                                        th Mã trợ giảng
+
+                                tbody 
+                                    each lophoc in data2
+                                        tr.text-center
+                                            td= lophoc.lophocMaLH
+                                            td= lophoc.trogiangNhanvien
+
+                            
+
+
+block style 
+    link(rel="stylesheet", href="/create/giangviendskh/index.css")
+block script 
+    script(src="/create/giangviendslh/index.js")

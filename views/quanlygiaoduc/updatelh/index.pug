@@ -1,0 +1,164 @@
+extends ../layout.pug
+
+block content
+  .content-wrapper(style='padding-top:0px;')
+    // Content Header (Page header)
+    section.content-header
+      .container-fluid
+        .row.mb-2
+          .col-sm-6
+            h1 Update class
+          .col-sm-6
+            ol.breadcrumb.float-sm-right
+              li.breadcrumb-item
+                a(href='http://localhost:3000/main') Home
+              li.breadcrumb-item.active Update course
+      // /.container-fluid
+    // Main content
+    section.content
+      .container-fluid
+        .row
+          .col-12             
+            .card
+              // /.card-header
+              .card-body
+                .row 
+                    .col-2
+                        button.btn-add.form-control(name='' data-toggle="modal" data-target="#Addlophoc" ) Thêm mới 
+                .row
+                    .card-body
+                        table#TAB-students.table.table-bordered.table-striped
+                            thead
+                                tr.text-center
+                                    th Mã Khóa học
+                                    th Mã lớp học
+                                    th Ngày bắt đầu
+                                    th Ngày kết thúc
+                                    th Sĩ số
+                                    th Mã chi nhánh
+                                     th Thao tác
+                            tbody 
+                                each lophoc in data
+                                    tr.text-center
+                                        td= lophoc.khoahocMaKH
+                                        td= lophoc.MaLH
+                                        td= moment(lophoc.Ngaybatdau).format('ll')
+                                        td= moment(lophoc.Ngayketthuc).format('ll')
+                                        td= lophoc.Siso
+                                        td= lophoc.chinhanhMaCN
+                                        td.text-center
+                                            btn.btn-edit.btn.btn-primary.btn-xs(style="margin-right: 5px"  data-MaLH=lophoc.MaLH data-Siso=lophoc.Siso data-makh=lophoc.khoahocMaKH data-macn=lophoc.chinhanhMaCN )
+                                                svg.bi.bi-pencil-square(xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' viewbox='0 0 16 16')
+                                                    path(d='M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z')
+                                                    path(fill-rule='evenodd' d='M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z')
+                                            btn.btn-delete.btn.btn-danger.btn-xs(style="margin-right: 5px" data-MaLH=lophoc.MaLH )
+                                                i.icon-trash.menu-icon
+
+                                #Addlophoc.modal.fade(role='dialog' aria-labelledby='Addlophoc' aria-hidden='true')
+                                    .modal-dialog 
+                                        .modal-content
+                                            .modal-header
+                                                h5.modal-title Thêm mới lớp học
+                                                button.close(type='button' data-dismiss='modal' aria-label='Close')
+                                                    span(aria-hidden='true') &times;
+                                            form(action="/capnhatlh/add",method="post") 
+                                                .modal-body
+                                                    .row     
+                                                        .col-md-6 
+                                                            .form-group
+                                                                label Mã khóa học
+                                                                    select.form-control.form-control-lg(name="MaKH")
+                                                                        each lophoc in data
+                                                                            option(selected=''  value=lophoc.khoahocMaKH)=lophoc.khoahocMaKH
+                                                        .col-md-6 
+                                                            .form-group
+                                                                label Mã chi nhánh
+                                                                    select.form-control.form-control-lg(name="MaCN")
+                                                                        each lophoc in data
+                                                                            option(selected=''  value=lophoc.chinhanhMaCN)=lophoc.chinhanhMaCN                                                                        
+                                                    .row 
+                                                        .col-md-12
+                                                            .form-group
+                                                                label Mã lớp học
+                                                                    input.form-control(type='text'  name = 'MaLH')
+                                                    .row
+                                                        .col-md-12
+                                                            .form-group
+                                                                label Ngày bắt đầu
+                                                                    input.form-control(type="datetime-local"  name="Ngaybatdau")
+                                                    .row
+                                                        .col-md-12
+                                                            .form-group
+                                                                label Ngày kết thúc
+                                                                    input.form-control(type="datetime-local"  name="Ngayketthuc")
+                                                        
+
+                                                .modal-footer
+                                                    button.btn.btn-secondary(type='button' data-dismiss='modal') Đóng lại
+                                                    button.btn.btn-primary(type='submit') Thêm mới
+                                #Editlophoc.modal.fade(role='dialog' aria-labelledby='Editlophoc' aria-hidden='true')
+                                    .modal-dialog 
+                                        .modal-content
+                                            .modal-header
+                                                h5.modal-title Chỉnh sửa
+                                                button.close(type='button' data-dismiss='modal' aria-label='Close')
+                                                    span(aria-hidden='true') &times;
+                                            form(action="/capnhatlh/edit",method="post") 
+                                                .modal-body
+                                                    .row     
+                                                        .col-md-6 
+                                                            .form-group
+                                                                label Mã khóa học
+                                                                    select.form-control.form-control-lg(name="MaKH")
+                                                                        each lophoc in data
+                                                                            option(selected=''  value=lophoc.khoahocMaKH)=lophoc.khoahocMaKH
+                                                        .col-md-6 
+                                                            .form-group
+                                                                label Mã chi nhánh
+                                                                    select.form-control.form-control-lg(name="MaCN")
+                                                                        each lophoc in data
+                                                                            option(selected=''  value=lophoc.chinhanhMaCN)=lophoc.chinhanhMaCN                                                                        
+                                                    .row 
+                                                        .col-md-12
+                                                            .form-group
+                                                                label Mã lớp học
+                                                                    input.form-control(type='text'  name = 'MaLH' readonly)
+                                                    .row
+                                                        .col-md-12
+                                                            .form-group
+                                                                label Ngày bắt đầu
+                                                                    input.form-control(type="datetime-local"  name="Ngaybatdau")
+                                                    .row
+                                                        .col-md-12
+                                                            .form-group
+                                                                label Ngày kết thúc
+                                                                    input.form-control(type="datetime-local"  name="Ngayketthuc")                                                                 
+
+                                                .modal-footer
+                                                    button.btn.btn-secondary(type='button' data-dismiss='modal') Đóng lại
+                                                    button.btn.btn-primary(type='submit') Chỉnh sửa
+                                #Deletelophoc.modal.fade(role='dialog' aria-labelledby='Deletelophoc' aria-hidden='true')
+                                    .modal-dialog 
+                                        .modal-content
+                                            .modal-header
+                                                h5.modal-title Delete
+                                                button.close(type='button' data-dismiss='modal' aria-label='Close')
+                                                    span(aria-hidden='true') &times;
+                                            form(action="/capnhatlh/delete",method="post") 
+                                                .modal-body 
+                                                    .form-group
+                                                        label Mã lớp học
+                                                            input.form-control(type='text'  name = 'MaLH' readonly)
+                                                .modal-footer
+                                                    button.btn.btn-secondary(type='button' data-dismiss='modal') Close
+                                                    button.btn.btn-danger(type='submit') Delete
+
+
+
+ 
+
+
+block style 
+    link(rel="stylesheet", href="/create/khoahoc/index.css")
+block script 
+    script(src="/create/lophoc/index.js")

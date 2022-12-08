@@ -1,0 +1,57 @@
+extends ../layout.pug
+
+block content
+  .content-wrapper(style='padding-top:0px;')
+    // Content Header (Page header)
+    section.content-header
+      .container-fluid
+        .row.mb-2
+          .col-sm-6
+            h1 List of students in charge
+          .col-sm-6
+            ol.breadcrumb.float-sm-right
+              li.breadcrumb-item
+                a(href='http://localhost:3000/main') Home
+              li.breadcrumb-item.active List of students in charge  
+      // /.container-fluid
+    // Main content
+    section.content
+      .container-fluid
+        .row
+          .col-12             
+            .card
+              // /.card-header
+              .card-body
+                .row
+                    .card-body
+                        .row 
+                            .col-12
+                                form#form-search
+                                    .row
+                                        .col-11
+                                            input.form-control(id='malh' placeholder='Mã lớp học')
+                                        .col-1
+                                            button.btn-search.form-control(name='' )
+                                                i.icon-search.menu-icon
+                        .row
+                            .card-body
+                                h3 List of classes in charge
+                                table#TAB-students.table.table-bordered.table-striped
+                                    thead
+                                        tr.text-center.tr-head
+                                            th Mã học viên
+                                            th Họ 
+                                            th Tên đệm
+                                            th Tên
+                                            th Tuổi
+
+
+
+                                     
+
+block style 
+    link(rel="stylesheet", href="/create/gvstudentlist/index.css")
+block script 
+    script(src="https://cdn.jsdelivr.net/npm/sweetalert2@9")
+    script(src="/create/gvstudentlist/index.js")
+
